@@ -25,8 +25,5 @@ execute as @e[type=item,tag=!color_checked] run function main:mechanic/colored_n
 execute as @a if items entity @s weapon.mainhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_main
 execute as @a if items entity @s weapon.offhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_off
 
-scoreboard players enable @a color_help
-execute as @a[scores={color_help=1..}] run function main:mechanic/colored_names/show_help
-
 # 6. Auto-Compass Lore
 execute as @a run function main:item/compass/check_compass_lore

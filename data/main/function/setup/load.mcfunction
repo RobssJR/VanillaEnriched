@@ -2,7 +2,6 @@
 scoreboard objectives add vplus_math dummy
 scoreboard objectives add vplus_state dummy
 scoreboard objectives add vplus_sneak minecraft.custom:minecraft.sneak_time
-scoreboard objectives add color_help trigger
 
 scoreboard players set .paused vplus_state 0
 
