@@ -1,27 +1,16 @@
 {
 	"criteria": {
 		"riding_boat": {
+			"trigger": "minecraft:started_riding",
 			"conditions": {
-				"player": [
-					{
-						"condition": "minecraft:entity_properties",
-						"entity": "this",
-						"predicate": {
-							"vehicle": {
-								"type": "#minecraft:boat"
-							}
-						}
+				"player": {
+					"vehicle": {
+						"type": "#minecraft:boat"
 					}
-				]
-			},
-			"trigger": "minecraft:started_riding"
+				}
+			}
 		}
 	},
-	"requirements": [
-		[
-			"riding_boat"
-		]
-	],
 	"rewards": {
 		"function": "main:mechanic/boat/boarding_boat"
 	}
