@@ -1,0 +1,1 @@
+$data merge entity @s {text: {text: "", extra: [{text: "$(s_icon) Dia $(day) de $(s_name)\n", color: "$(s_color)"}, {text: "Year $(year)  •  ", color: "gray"}, {text: "⏳ $(hour):$(minute)", color: "gold"}]}}
