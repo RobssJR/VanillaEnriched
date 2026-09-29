@@ -1,4 +1,4 @@
-$summon item ~ ~ ~ {Tags:["vplus_compass_temp"],PickupDelay:32767s,Item:{id:"minecraft:stone",count:1}}
+summon item ~ ~ ~ {Tags:["vplus_compass_temp"],PickupDelay:32767s,Item:{id:"minecraft:stone",count:1}}
 
 # Fetch from correct hand
 execute if items entity @s weapon.mainhand minecraft:compass unless data entity @s SelectedItem.components."minecraft:custom_data".vplus_lore run item replace entity @e[type=item,tag=vplus_compass_temp,limit=1] contents from entity @s weapon.mainhand

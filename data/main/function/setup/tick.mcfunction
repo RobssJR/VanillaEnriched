@@ -30,5 +30,3 @@ execute as @a[scores={color_help=1..}] run function main:mechanic/colored_names/
 
 # 6. Auto-Compass Lore
 execute as @a run function main:item/compass/check_compass_lore
-# 7. Boat Water & Splash Effects
-execute as @a[scores={boating=1..}] run function main:mechanic/boat/riding_boat
