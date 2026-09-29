@@ -28,5 +28,7 @@ execute as @a if items entity @s weapon.offhand *[minecraft:custom_name] run fun
 scoreboard players enable @a color_help
 execute as @a[scores={color_help=1..}] run function main:mechanic/colored_names/show_help
 
-# 6. Auto-Lore Bússola
+# 6. Auto-Compass Lore
 execute as @a run function main:item/compass/check_compass_lore
+# 7. Boat Water & Splash Effects
+execute as @a[scores={boating=1..}] run function main:mechanic/boat/riding_boat

@@ -3,10 +3,11 @@ scoreboard objectives add vplus_math dummy
 scoreboard objectives add vplus_state dummy
 scoreboard objectives add vplus_sneak minecraft.custom:minecraft.sneak_time
 scoreboard objectives add color_help trigger
+scoreboard objectives add boating minecraft.custom:minecraft.boat_one_cm
 
 scoreboard players set .paused vplus_state 0
 
-# Inicializacao de Constantes Matematicas
+# Mathematical Constants Initialization
 scoreboard players set .60 vplus_math 60
 scoreboard players set .1000 vplus_math 1000
 scoreboard players set .24000 vplus_math 24000
@@ -17,4 +18,4 @@ scoreboard players set .wc_timer vplus_math 0
 scoreboard players set .last_minute vplus_math -1
 
 # Notify players of successful load
-tellraw @a {"text":"[VanillaPlus Core] Sistemas Carregados com Sucesso!","color":"green"}
+tellraw @a {"text":"[VanillaPlus Core] Systems Successfully Loaded!","color":"green"}
