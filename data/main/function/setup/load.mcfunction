@@ -14,6 +14,17 @@ scoreboard players set .112 vplus_math 112
 scoreboard players set .-1 vplus_math -1
 scoreboard players set .wc_timer vplus_math 0
 scoreboard players set .last_minute vplus_math -1
+scoreboard players set .color_timer vplus_math 0
+scoreboard players set .rainbow_idx vplus_math 0
+
+# Setup safe container block for item modification (safe, chunkloaded, at y=319)
+execute in minecraft:overworld run forceload add 0 0
+execute in minecraft:overworld run setblock 0 319 0 minecraft:barrel keep
+
+# Region System Initialization (Scoreboards & Scheduled Loops)
+scoreboard objectives add vp_player_id dummy
+schedule function main:mechanic/region/tracker_loop 20t replace
+schedule function main:mechanic/region/clean_loop 100t replace
 
 # Notify players of successful load
 tellraw @a {"text":"[VanillaPlus Core] Systems Successfully Loaded!","color":"green"}

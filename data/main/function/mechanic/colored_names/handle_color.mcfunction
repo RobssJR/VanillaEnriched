@@ -8,6 +8,21 @@ execute if data storage main:mechanic/colored_names/temp {char:"&"} run function
 execute if data storage main:mechanic/colored_names/temp {char:"&"} run data modify storage main:mechanic/colored_names/temp has_color set value 1b
 execute if data storage main:mechanic/colored_names/temp {char:"&"} run return 1
 
+# Normalize uppercase color/format codes to lowercase
+execute if data storage main:mechanic/colored_names/temp {char:"A"} run data modify storage main:mechanic/colored_names/temp char set value "a"
+execute if data storage main:mechanic/colored_names/temp {char:"B"} run data modify storage main:mechanic/colored_names/temp char set value "b"
+execute if data storage main:mechanic/colored_names/temp {char:"C"} run data modify storage main:mechanic/colored_names/temp char set value "c"
+execute if data storage main:mechanic/colored_names/temp {char:"D"} run data modify storage main:mechanic/colored_names/temp char set value "d"
+execute if data storage main:mechanic/colored_names/temp {char:"E"} run data modify storage main:mechanic/colored_names/temp char set value "e"
+execute if data storage main:mechanic/colored_names/temp {char:"F"} run data modify storage main:mechanic/colored_names/temp char set value "f"
+execute if data storage main:mechanic/colored_names/temp {char:"K"} run data modify storage main:mechanic/colored_names/temp char set value "k"
+execute if data storage main:mechanic/colored_names/temp {char:"L"} run data modify storage main:mechanic/colored_names/temp char set value "l"
+execute if data storage main:mechanic/colored_names/temp {char:"M"} run data modify storage main:mechanic/colored_names/temp char set value "m"
+execute if data storage main:mechanic/colored_names/temp {char:"N"} run data modify storage main:mechanic/colored_names/temp char set value "n"
+execute if data storage main:mechanic/colored_names/temp {char:"O"} run data modify storage main:mechanic/colored_names/temp char set value "o"
+execute if data storage main:mechanic/colored_names/temp {char:"R"} run data modify storage main:mechanic/colored_names/temp char set value "r"
+execute if data storage main:mechanic/colored_names/temp {char:"Z"} run data modify storage main:mechanic/colored_names/temp char set value "z"
+
 # Standard Colors
 execute if data storage main:mechanic/colored_names/temp {char:"0"} run data modify storage main:mechanic/colored_names/temp valid_color set value 1b
 execute if data storage main:mechanic/colored_names/temp {char:"1"} run data modify storage main:mechanic/colored_names/temp valid_color set value 1b

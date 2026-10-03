@@ -20,10 +20,12 @@ scoreboard players operation .last_minute vplus_math = .minute vplus_math
 # 4. Player Interactions (Sneaking)
 execute as @a[scores={vplus_sneak=1..}] run function main:mechanic/player/sneak
 
-# 5. Colored Names (Anvil Color System)
+# 5. Colored Names (Anvil Color System - Throttled every 4 ticks for performance)
+scoreboard players add .color_timer vplus_math 1
+execute if score .color_timer vplus_math matches 4.. run scoreboard players set .color_timer vplus_math 0
+execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.mainhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_main
+execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.offhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_off
 execute as @e[type=item,tag=!color_checked] run function main:mechanic/colored_names/check_item
-execute as @a if items entity @s weapon.mainhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_main
-execute as @a if items entity @s weapon.offhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_off
 
 # 6. Auto-Compass Lore
 execute as @a run function main:item/compass/check_compass_lore
