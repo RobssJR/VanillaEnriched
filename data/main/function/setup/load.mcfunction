@@ -30,4 +30,4 @@ schedule function main:mechanic/region/clean_loop 100t replace
 function main:item/stat_book/load
 
 # Notify players of successful load
-tellraw @a {"text":"[VanillaPlus Core] Systems Successfully Loaded!","color":"green"}
+tellraw @a {"text":"[Vanilla Enriched] Systems Successfully Loaded!","color":"green"}

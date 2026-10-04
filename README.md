@@ -1,10 +1,10 @@
-# 🌟 VanillaPlusCore (Vanilla Enriched)
+# 🌟 Vanilla Enriched
 
 ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21%2B%20%2F%2026.3-brightgreen)
 ![Datapack Type](https://img.shields.io/badge/Type-Vanilla%20Datapack-blue)
 ![Dependencies](https://img.shields.io/badge/Dependencies-None%20(Pure%20Vanilla)-orange)
 
-**VanillaPlusCore** é um datapack modular, leve e de alta performance desenvolvido para expandir a experiência vanilla com recursos modernos de qualidade de vida (QoL), navegação imersiva, estatísticas em atrís, relógios de parede e muito mais — 100% fiel à essência do Minecraft e sem necessidade de mods no cliente ou servidor.
+**Vanilla Enriched** é um datapack modular, leve e de alta performance desenvolvido para expandir a experiência vanilla com recursos modernos de qualidade de vida (QoL), navegação imersiva, estatísticas em atrís, relógios de parede e muito mais — 100% fiel à essência do Minecraft e sem necessidade de mods no cliente ou servidor.
 
 ---
 
@@ -109,7 +109,7 @@ Crie demarcações territoriais simples e imersivas para cidades, bases ou ponto
 ## 🚀 Instalação
 
 1. Baixe ou clone esta pasta do datapack.
-2. Coloque a pasta `VanillaPlusCore` dentro do diretório `datapacks` do seu mundo:
+2. Coloque a pasta `VanillaEnriched` (ou o diretório descompactado) dentro da pasta `datapacks` do seu mundo:
    ```text
    .minecraft/saves/<SEU_MUNDO>/datapacks/
    ```
@@ -119,7 +119,7 @@ Crie demarcações territoriais simples e imersivas para cidades, bases ou ponto
    ```
 4. A seguinte mensagem confirmará o carregamento no chat:
    ```text
-   [VanillaPlus Core] Systems Successfully Loaded!
+   [Vanilla Enriched] Systems Successfully Loaded!
    ```
 
 ---
@@ -127,7 +127,7 @@ Crie demarcações territoriais simples e imersivas para cidades, bases ou ponto
 ## 🛠️ Estrutura do Projeto
 
 ```text
-VanillaPlusCore/
+VanillaEnriched/
 ├── pack.mcmeta                         # Metadados e compatibilidade do pacote
 ├── README.md                           # Documentação completa
 ├── spyglass.json                       # Configuração de validação Spyglass (26.3)

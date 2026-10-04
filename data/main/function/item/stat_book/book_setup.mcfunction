@@ -18,7 +18,7 @@ data modify block ~ ~ ~ Book.components."minecraft:custom_data".statBook set val
 data modify block ~ ~ ~ Book.components."minecraft:custom_data".stats set from storage enriched:tmp stats
 data modify block ~ ~ ~ Book.components."minecraft:custom_data".stat set from storage enriched:tmp stats[0]
 
-# Set standard VanillaPlus custom name and lore
+# Set standard Vanilla Enriched custom name and lore
 data modify block ~ ~ ~ Book.components."minecraft:custom_name" set value {translate:"enriched.book.title",fallback:"Livro de Estatísticas",italic:false,color:"gold"}
 data modify block ~ ~ ~ Book.components."minecraft:lore" set value [{translate:"enriched.book.lore.1",fallback:"Lista automaticamente as estatísticas dos jogadores.",italic:false,color:"dark_purple"},{translate:"enriched.book.lore.2",fallback:"Necessita estar posicionado em um atril.",italic:false,color:"dark_purple"},{translate:"enriched.book.lore.3",fallback:"Estatísticas rastreadas:",italic:false,color:"dark_purple"}]
 data modify storage enriched:tmp lore_stat set value {text:"",color:"yellow",italic:false}
@@ -35,7 +35,7 @@ execute as @a at @s run function main:item/stat_book/store_name with entity @s
 # Update all pages of the book immediately
 function main:item/stat_book/update_book
 
-# Audiovisual feedback (VanillaPlus Standard)
+# Audiovisual feedback (Vanilla Enriched)
 playsound block.enchantment_table.use master @a ~ ~ ~ 1 1.2
 particle enchant ~ ~1.2 ~ 0.3 0.3 0.3 0.5 25 normal
-title @s actionbar [{"text":"[VanillaPlus] ","color":"gold","bold":true},{"text":"Livro de Estatísticas Ativado!","color":"green"}]
+title @s actionbar [{"text":"[Vanilla Enriched] ","color":"gold","bold":true},{"text":"Livro de Estatísticas Ativado!","color":"green"}]
