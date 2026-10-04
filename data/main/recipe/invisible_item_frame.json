@@ -10,9 +10,16 @@
     "count": 1,
     "components": {
       "minecraft:enchantment_glint_override": true,
-      "minecraft:item_name": "{\"text\":\"Moldura Invisível\",\"color\":\"aqua\"}",
+      "minecraft:item_name": {
+        "text": "Moldura Invisível",
+        "color": "aqua"
+      },
       "minecraft:lore": [
-        "{\"text\":\"Invisível\",\"color\":\"gray\",\"italic\":false}"
+        {
+          "text": "Invisível",
+          "color": "gray",
+          "italic": false
+        }
       ],
       "minecraft:entity_data": {
         "id": "minecraft:item_frame",
