@@ -17,6 +17,7 @@
   - [🎨 Anvil Colors & Text Formatting](#-anvil-colors--text-formatting)
   - [🚩 Banner Regions & Discovery Markers](#-banner-regions--discovery-markers)
   - [🖼️ Enchanted Invisible Item Frames](#️-enchanted-invisible-item-frames)
+  - [👤 Custom Decorative Player Heads](#-custom-decorative-player-heads)
 - [📦 Requirements & Compatibility](#-requirements--compatibility)
 - [🚀 Installation](#-installation)
 - [🛠️ Project Structure](#️-project-structure)
@@ -112,6 +113,22 @@ A classic, intuitive invisible frame mechanic for builders — 100% survival-fri
   - **Holding an Item:** As soon as an item is inserted, the frame becomes **100% invisible**, leaving only the displayed item floating neatly on the wall, ceiling, or floor.
   - **Item Removal:** Punching or removing the item makes the frame visible again so it is never misplaced.
   - **Drop Restoration:** Breaking the frame restores the original enchanted item with its custom components intact.
+
+---
+
+### 👤 Custom Decorative Player Heads
+Craft blank decorative player heads in survival and transform them into any player's skin using an Anvil!
+
+- **Shaped Crafting Recipe:**
+  - 8x Leather surrounding 1x Carved Pumpkin crafts a **Decorative Player Head**.
+  - Includes helpful reminder lore: *"Rename this to any player to get their head!"*
+
+- **Intuitive Anvil Transformation:**
+  1. Place the crafted Decorative Player Head into an **Anvil**.
+  2. Type any player's username (e.g. `Notch`, `Dinnerbone`, `RobssJR`, or Marc's Head Format accounts like `MHF_Chest`, `MHF_Cake`, `MHF_TNT`, etc.).
+  3. Retrieve the head from the anvil. It **instantly transforms** with level-up chimes and green sparkle particles!
+  4. The head permanently receives that player's genuine skin and texture profile.
+  5. Special presets (such as `Giant Honey Dipper` / `129904`) are also supported with custom textured profiles.
 
 ---
 

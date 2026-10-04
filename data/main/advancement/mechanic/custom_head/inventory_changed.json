@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:player_head",
+            "components": {
+              "minecraft:custom_data": {
+                "can_transform": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "main:mechanic/custom_head/on_inventory_changed"
+  }
+}

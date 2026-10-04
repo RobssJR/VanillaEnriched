@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "lll",
+    "lpl",
+    "lll"
+  ],
+  "key": {
+    "l": "minecraft:leather",
+    "p": "minecraft:carved_pumpkin"
+  },
+  "result": {
+    "id": "minecraft:player_head",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "Decorative Player Head"
+      },
+      "minecraft:lore": [
+        {
+          "text": "Rename this to any player to get their head!",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:custom_data": {
+        "decorative_head": true,
+        "can_transform": true
+      }
+    }
+  },
+  "show_notification": false
+}

@@ -42,4 +42,8 @@ execute as @e[tag=enriched.name_fetch] run kill @s
 # 9. Invisible Item Frames
 function main:mechanic/invisible_frame/tick
 
+# 10. Custom Decorative Player Heads
+execute if score .color_timer vplus_math matches 0 as @a run function main:mechanic/custom_head/check_player
+execute as @e[type=item] if items entity @s contents minecraft:player_head run function main:mechanic/custom_head/check_dropped
+
 
