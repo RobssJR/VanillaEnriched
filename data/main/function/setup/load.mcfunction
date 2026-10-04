@@ -31,6 +31,7 @@ function main:item/stat_book/load
 
 # Custom Head Recipes
 recipe give @a main:decorative_player_head
+recipe give @a minecraft:player_head
 
 # Notify players of successful load
 tellraw @a {"text":"[Vanilla Enriched] Systems Successfully Loaded!","color":"green"}
