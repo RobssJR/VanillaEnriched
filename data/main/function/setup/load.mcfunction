@@ -26,6 +26,10 @@ scoreboard objectives add vp_player_id dummy
 schedule function main:mechanic/region/tracker_loop 20t replace
 schedule function main:mechanic/region/clean_loop 100t replace
 
+# Invisibility & Water Splash Initialization
+scoreboard objectives add vp_water_id dummy
+scoreboard objectives add vp_tracker_age dummy
+
 # Statistic Books Initialization
 function main:item/stat_book/load
 

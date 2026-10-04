@@ -16,6 +16,7 @@
   - [🕒 Relógio & Relógios de Parede](#-relógio--relógios-de-parede)
   - [🎨 Cores e Formatação na Bigorna](#-cores-e-formatação-na-bigorna)
   - [🚩 Regiões & Marcadores com Estandartes](#-regiões--marcadores-com-estandartes)
+  - [👻 Invisibilidade Prática para Construtores](#-invisibilidade-prática-para-construtores)
 - [📦 Requisitos & Compatibilidade](#-requisitos--compatibilidade)
 - [🚀 Instalação](#-instalação)
 - [🛠️ Estrutura do Projeto](#️-estrutura-do-projeto)
@@ -86,6 +87,8 @@ Personalize nomes de itens e blocos diretamente na Bigorna usando códigos intui
 
 ---
 
+---
+
 ### 🚩 Regiões & Marcadores com Estandartes
 Crie demarcações territoriais simples e imersivas para cidades, bases ou pontos de interesse:
 
@@ -95,6 +98,26 @@ Crie demarcações territoriais simples e imersivas para cidades, bases ou ponto
 4. Quando qualquer jogador entrar no raio da área, uma notificação de descoberta aparecerá no centro da tela:
    - **Título:** Nome da Região em Dourado e Negrito.
    - **Subtítulo:** *"Área Descoberta"*.
+
+---
+
+### 👻 Invisibilidade Prática para Construtores
+Decore suas construções de forma profissional sem depender de comandos complexos de `/data` ou mods!
+
+- **Tornar Invisível (Poção de Invisibilidade):**
+  - Arremesse uma **Poção de Invisibilidade Arremessável** (*Splash*) ou **Prolongada** (*Lingering*) próximo aos itens decorativos.
+  - Todas as entidades no raio de **3 blocos** da nuvem de efeito que pertençam à tag `#main:hideable_stands` ficarão invisíveis imediatamente (`Invisible:1b`).
+  - **Entidades Suportadas:**
+    - 🛡️ **Suporte de Armaduras** (*Armor Stands*): Ficam invisíveis, exibindo apenas as armaduras e itens equipados.
+    - 🖼️ **Molduras Comuns** (*Item Frames*): A moldura de madeira desaparece, deixando o item flutuando elegantemente na parede ou piso.
+    - ✨ **Molduras Brilhantes** (*Glow Item Frames*): Mantêm a luminescência e deixam apenas o item visível e reluzente.
+  - **Efeito Visual:** Partículas de fumaça mágica (`minecraft:poof`) e som de desmaterialização.
+  - **Sem Lag:** A nuvem de efeito é processada apenas uma única vez no impacto, prevenindo repetição contínua de comandos.
+
+- **Reverter Visibilidade (Frasco de Água Arremessável):**
+  - Arremesse um **Frasco de Água Arremessável** (*Splash Water Bottle*) diretamente nas entidades invisíveis.
+  - Um sistema ultra leve de rastreamento detecta o impacto exato do frasco e restaura o estado visível original (`Invisible:0b`) de todas as entidades invisíveis no raio de **3 blocos**.
+  - **Efeito Visual:** Erupção de partículas de água (`minecraft:splash` e `drip_water`) e som clássico de frasco de vidro quebrando.
 
 ---
 
@@ -142,8 +165,9 @@ VanillaEnriched/
         │   └── item/stat_book/         # Modificadores de dados dos livros
         ├── loot_table/
         │   └── item/stat_book/         # Resolução segura de nomes de jogadores
-        ├── tags/function/
-        │   └── item/stat_book/         # Hooks de pré-armazenamento e ciclo
+        ├── tags/
+        │   ├── entity_type/            # Tags de tipos de entidades (#main:hideable_stands)
+        │   └── function/item/stat_book/# Hooks de pré-armazenamento e ciclo
         └── function/
             ├── backend/
             │   ├── math/               # Utilitários matemáticos (cálculo de distâncias, raiz quadrada)
@@ -154,6 +178,7 @@ VanillaEnriched/
             │   └── stat_book/          # Gerenciamento de livros, páginas e atrís
             ├── mechanic/
             │   ├── colored_names/      # Interpretador de cores e chroma na bigorna
+            │   ├── invisibility/       # Invisibilidade e reversão com frasco de água
             │   ├── player/             # Detecção de ações (sneak / agachar)
             │   └── region/             # Sistema de detecção de regiões por estandarte
             └── setup/                  # Inicialização global (load) e loop principal (tick)
