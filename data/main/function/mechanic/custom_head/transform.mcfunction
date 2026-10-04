@@ -46,4 +46,4 @@ execute if data storage main:custom_head {raw_name:"giant honey dipper"} run ret
 execute if data storage main:custom_head {raw_name:"129904"} run return run function main:mechanic/custom_head/preset_honey_dipper
 
 # 9. Transform to player profile
-function main:mechanic/custom_head/apply_player_profile with storage main:custom_head
+function main:mechanic/custom_head/apply_player_profile
