@@ -39,7 +39,7 @@ execute if score .tick_20t vplus_math matches 0 run function main:item/stat_book
 execute as @e[tag=enriched.lectern] at @s align xyz unless block ~ ~ ~ minecraft:lectern run kill @s
 execute as @e[tag=enriched.name_fetch] run kill @s
 
-# 9. Invisibility & Water Splash Mechanics for Builders
-function main:mechanic/invisibility/tick
+# 9. Invisible Item Frames
+function main:mechanic/invisible_frame/tick
 
 

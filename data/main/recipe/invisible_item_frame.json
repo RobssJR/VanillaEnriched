@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:item_frame"
+    },
+    {
+      "item": "minecraft:glass_pane"
+    }
+  ],
+  "result": {
+    "id": "minecraft:item_frame",
+    "count": 1,
+    "components": {
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_name": "{\"text\":\"Moldura Invisível\",\"color\":\"aqua\"}",
+      "minecraft:lore": [
+        "{\"text\":\"Invisível\",\"color\":\"gray\",\"italic\":false}"
+      ],
+      "minecraft:entity_data": {
+        "id": "minecraft:item_frame",
+        "Tags": [
+          "main.invisible_frame"
+        ],
+        "Invisible": true
+      },
+      "minecraft:custom_data": {
+        "main_invisible_frame": true
+      }
+    }
+  }
+}

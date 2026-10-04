@@ -16,7 +16,7 @@
   - [🕒 Relógio & Relógios de Parede](#-relógio--relógios-de-parede)
   - [🎨 Cores e Formatação na Bigorna](#-cores-e-formatação-na-bigorna)
   - [🚩 Regiões & Marcadores com Estandartes](#-regiões--marcadores-com-estandartes)
-  - [👻 Invisibilidade Prática para Construtores](#-invisibilidade-prática-para-construtores)
+  - [🖼️ Molduras Invisíveis Encantadas](#-molduras-invisíveis-encantadas)
 - [📦 Requisitos & Compatibilidade](#-requisitos--compatibilidade)
 - [🚀 Instalação](#-instalação)
 - [🛠️ Estrutura do Projeto](#️-estrutura-do-projeto)
@@ -101,23 +101,19 @@ Crie demarcações territoriais simples e imersivas para cidades, bases ou ponto
 
 ---
 
-### 👻 Invisibilidade Prática para Construtores
-Decore suas construções de forma profissional sem depender de comandos complexos de `/data` ou mods!
+### 🖼️ Molduras Invisíveis Encantadas
+Sistema clássico e intuitivo de molduras transparentes para construtores, 100% integrado ao survival sem comandos!
 
-- **Tornar Invisível (Poção de Invisibilidade):**
-  - Arremesse uma **Poção de Invisibilidade Arremessável** (*Splash*) ou **Prolongada** (*Lingering*) próximo aos itens decorativos.
-  - Todas as entidades no raio de **3 blocos** da nuvem de efeito que pertençam à tag `#main:hideable_stands` ficarão invisíveis imediatamente (`Invisible:1b`).
-  - **Entidades Suportadas:**
-    - 🛡️ **Suporte de Armaduras** (*Armor Stands*): Ficam invisíveis, exibindo apenas as armaduras e itens equipados.
-    - 🖼️ **Molduras Comuns** (*Item Frames*): A moldura de madeira desaparece, deixando o item flutuando elegantemente na parede ou piso.
-    - ✨ **Molduras Brilhantes** (*Glow Item Frames*): Mantêm a luminescência e deixam apenas o item visível e reluzente.
-  - **Efeito Visual:** Partículas de fumaça mágica (`minecraft:poof`) e som de desmaterialização.
-  - **Sem Lag:** A nuvem de efeito é processada apenas uma única vez no impacto, prevenindo repetição contínua de comandos.
+- **Receita na Bancada (Crafting Shapeless):**
+  - **Moldura Invisível:** 1x Moldura Comum (*Item Frame*) + 1x Painel de Vidro (*Glass Pane*).
+  - **Moldura Brilhante Invisível:** 1x Moldura Brilhante (*Glow Item Frame*) + 1x Painel de Vidro (*Glass Pane*).
+  - O resultado é um item especial **encantado com brilho**, com nome ciano (*Moldura Invisível*) e lore indicativo.
 
-- **Reverter Visibilidade (Frasco de Água Arremessável):**
-  - Arremesse um **Frasco de Água Arremessável** (*Splash Water Bottle*) diretamente nas entidades invisíveis.
-  - Um sistema ultra leve de rastreamento detecta o impacto exato do frasco e restaura o estado visível original (`Invisible:0b`) de todas as entidades invisíveis no raio de **3 blocos**.
-  - **Efeito Visual:** Erupção de partículas de água (`minecraft:splash` e `drip_water`) e som clássico de frasco de vidro quebrando.
+- **Comportamento Inteligente no Jogo:**
+  - **Vazia:** Enquanto não possuir nenhum item colocado, a moldura permanece **visível** para que você possa posicioná-la e clicar nela com facilidade.
+  - **Com Item:** Assim que qualquer item ou bloco for inserido nela, a moldura se torna **100% invisível** instantaneamente, deixando apenas o item flutuando com elegância na parede, teto ou chão.
+  - **Retirada de Item:** Ao remover o item com o botão esquerdo, a moldura volta a ficar visível para você não perdê-la de vista.
+  - **Ao Quebrar:** Ao destruir a moldura, o item dropado é restaurado com o encantamento e componentes originais, devolvendo a Moldura Invisível para o seu inventário.
 
 ---
 
@@ -160,14 +156,14 @@ VanillaEnriched/
     └── main/
         ├── advancement/
         │   ├── item/stat_book/         # Gatilho de interação com o Atril
+        │   ├── mechanic/invisible_frame# Gatilhos de colocação e interação com molduras
         │   └── region/                 # Gatilho de colocação de estandartes
         ├── item_modifier/
         │   └── item/stat_book/         # Modificadores de dados dos livros
         ├── loot_table/
         │   └── item/stat_book/         # Resolução segura de nomes de jogadores
-        ├── tags/
-        │   ├── entity_type/            # Tags de tipos de entidades (#main:hideable_stands)
-        │   └── function/item/stat_book/# Hooks de pré-armazenamento e ciclo
+        ├── recipe/                     # Receitas de Molduras Invisíveis (com painel de vidro)
+        ├── tags/function/item/stat_book# Hooks de pré-armazenamento e ciclo
         └── function/
             ├── backend/
             │   ├── math/               # Utilitários matemáticos (cálculo de distâncias, raiz quadrada)
@@ -178,7 +174,7 @@ VanillaEnriched/
             │   └── stat_book/          # Gerenciamento de livros, páginas e atrís
             ├── mechanic/
             │   ├── colored_names/      # Interpretador de cores e chroma na bigorna
-            │   ├── invisibility/       # Invisibilidade e reversão com frasco de água
+            │   ├── invisible_frame/    # Lógica inteligente de molduras invisíveis
             │   ├── player/             # Detecção de ações (sneak / agachar)
             │   └── region/             # Sistema de detecção de regiões por estandarte
             └── setup/                  # Inicialização global (load) e loop principal (tick)
