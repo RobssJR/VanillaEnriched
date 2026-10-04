@@ -20,7 +20,7 @@ scoreboard players set #place vplus_math 0
 execute store result score #n vplus_math run data get storage enriched:tmp array
 
 # If no entries exist yet
-execute if score #n vplus_math matches 0 run data modify storage enriched:tmp book.page append value {text: "Nenhuma pontuação registrada ainda.\n", italic: true, color: "gray"}
+execute if score #n vplus_math matches 0 run data modify storage enriched:tmp book.page append value {text: "No scores recorded yet.\n", italic: true, color: "gray"}
 execute if score #n vplus_math matches 0 run data modify storage enriched:tmp book.pages append from storage enriched:tmp book.page
 
 # If entries exist, fill recursively and finalize last page

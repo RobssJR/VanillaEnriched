@@ -1,7 +1,7 @@
 scoreboard players set @s enriched.optedin 0
 scoreboard players set @s enriched.optin 0
 
-tellraw @s [{translate:"enriched.opt_out",color:"gray",italic:true,fallback:"Você optou por não participar das estatísticas. Suas pontuações serão removidas na próxima atualização."}]
+tellraw @s [{translate:"enriched.opt_out",color:"gray",italic:true,fallback:"You opted out of statistics. Your scores will be removed on the next update."}]
 
 # Remove player from existing storages
 data modify storage enriched:tmp remove.uuid set from entity @s UUID

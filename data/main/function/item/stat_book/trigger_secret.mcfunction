@@ -6,6 +6,6 @@ execute store result block ~ ~ ~ Book.components."minecraft:custom_data".secret 
 
 function main:item/stat_book/update_book
 
-execute if score #sec vplus_math matches 0 run title @s actionbar [{fallback:"Modo Secreto: Nenhum segredo.",translate:"enriched.secret.default",color:"green"}]
-execute if score #sec vplus_math matches 1 run title @s actionbar [{fallback:"Modo Secreto: Nomes ocultos.",translate:"enriched.secret.names",color:"yellow"}]
-execute if score #sec vplus_math matches 2 run title @s actionbar [{fallback:"Modo Secreto: Pontuações ocultas.",translate:"enriched.secret.scores",color:"aqua"}]
+execute if score #sec vplus_math matches 0 run title @s actionbar [{fallback:"Secret Mode: No secrets.",translate:"enriched.secret.default",color:"green"}]
+execute if score #sec vplus_math matches 1 run title @s actionbar [{fallback:"Secret Mode: Names hidden.",translate:"enriched.secret.names",color:"yellow"}]
+execute if score #sec vplus_math matches 2 run title @s actionbar [{fallback:"Secret Mode: Scores hidden.",translate:"enriched.secret.scores",color:"aqua"}]

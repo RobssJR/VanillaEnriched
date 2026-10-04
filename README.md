@@ -4,184 +4,182 @@
 ![Datapack Type](https://img.shields.io/badge/Type-Vanilla%20Datapack-blue)
 ![Dependencies](https://img.shields.io/badge/Dependencies-None%20(Pure%20Vanilla)-orange)
 
-**Vanilla Enriched** é um datapack modular, leve e de alta performance desenvolvido para expandir a experiência vanilla com recursos modernos de qualidade de vida (QoL), navegação imersiva, estatísticas em atrís, relógios de parede e muito mais — 100% fiel à essência do Minecraft e sem necessidade de mods no cliente ou servidor.
+**Vanilla Enriched** is a modular, lightweight, and high-performance datapack designed to enhance the vanilla survival experience with modern Quality of Life (QoL) mechanics, immersive navigation, multipage lectern leaderboards, wall clocks, and customizable aesthetics — 100% faithful to the core Minecraft experience with zero client or server mods required.
 
 ---
 
-## 📑 Sumário
+## 📑 Table of Contents
 
-- [🌟 Funcionalidades](#-funcionalidades)
-  - [📚 Atril de Estatísticas Multipage (Vanilla Enriched)](#-atril-de-estatísticas-multipage-vanilla-enriched)
-  - [🧭 Bússola & Navegação Avançada](#-bússola--navegação-avançada)
-  - [🕒 Relógio & Relógios de Parede](#-relógio--relógios-de-parede)
-  - [🎨 Cores e Formatação na Bigorna](#-cores-e-formatação-na-bigorna)
-  - [🚩 Regiões & Marcadores com Estandartes](#-regiões--marcadores-com-estandartes)
-  - [🖼️ Molduras Invisíveis Encantadas](#-molduras-invisíveis-encantadas)
-- [📦 Requisitos & Compatibilidade](#-requisitos--compatibilidade)
-- [🚀 Instalação](#-instalação)
-- [🛠️ Estrutura do Projeto](#️-estrutura-do-projeto)
-- [📄 Licença](#-licença)
-
----
-
-## 🌟 Funcionalidades
-
-### 📚 Atril de Estatísticas Multipage (Vanilla Enriched)
-Transforme atrís (*lecterns*) em quadros de líderes interativos e atualizados automaticamente em tempo real!
-
-- **Múltiplas Páginas:** Suporta até dezenas de páginas em um único livro, rastreando uma estatística diferente por página.
-- **Títulos Polidos:** Cada página exibe um cabeçalho estilizado (ex: `✦ Saltos ✦`, `✦ Mortes ✦`, `✦ Tempo de Jogo ✦`) com divisórias perfeitamente alinhadas (`───────────`) sem quebra de linha.
-- **Nomes Reais de Jogadores:** Mapeamento inteligente de nomes, garantindo que o nick real do jogador apareça no pódio em vez de UUIDs ou seletores crus.
-- **Top 10 & Pódio:** Ordenação automática decrescente com destaque para o pódio (`1º`, `2º`, `3º`).
-- **Feedback Audiovisual:** Efeitos sonoros de encantamento, partículas e notificação na Actionbar ao converter ou atualizar o livro.
-
-#### 📖 Como Criar um Livro de Estatísticas:
-1. Pegue um **Livro e Pena** (*Book and Quill*).
-2. Em cada página, escreva o identificador ou atalho da estatística desejada (ex: `pulos`, `deaths`, `enriched.custom.jump`, `sb.custom.time_since_death`).
-3. Assine o livro com o título **`EnrichedStats`** (ou **`MCStats`**).
-4. Coloque o livro assinado em qualquer **Atril**. O datapack processará o livro instantaneamente!
-
-#### ⚙️ Comandos de Jogador:
-- `/trigger enriched.help` — Exibe o guia de ajuda e estatísticas disponíveis no chat.
-- `/trigger enriched.optin` — Entra voluntariamente no rastreamento de estatísticas.
-- `/trigger enriched.optout` — Oculta e remove seus dados do livro de estatísticas.
-- `/trigger enriched.secret` — Alterna o modo secreto (mantém a pontuação oculta para outros jogadores).
+- [🌟 Features](#-features)
+  - [📚 Multipage Statistics Books (Lecterns)](#-multipage-statistics-books-lecterns)
+  - [🧭 Compass & Advanced Navigation](#-compass--advanced-navigation)
+  - [🕒 Clock & Digital Wall Clocks](#-clock--digital-wall-clocks)
+  - [🎨 Anvil Colors & Text Formatting](#-anvil-colors--text-formatting)
+  - [🚩 Banner Regions & Discovery Markers](#-banner-regions--discovery-markers)
+  - [🖼️ Enchanted Invisible Item Frames](#️-enchanted-invisible-item-frames)
+- [📦 Requirements & Compatibility](#-requirements--compatibility)
+- [🚀 Installation](#-installation)
+- [🛠️ Project Structure](#️-project-structure)
+- [📄 License](#-license)
 
 ---
 
-### 🧭 Bússola & Navegação Avançada
-Leve a navegação vanilla para outro nível sem poluir sua tela.
+## 🌟 Features
 
-- **Exibição na Actionbar (Agachar / Shift):** Segure uma bússola (na mão principal ou secundária) e agache para ver em tempo real:
-  - **Coordenadas Atuais:** `X`, `Y`, `Z`.
-  - **Direção Cardeal (8 vias):** `Norte (N)`, `Nordeste (NE)`, `Leste (L)`, `Sudeste (SE)`, `Sul (S)`, `Sudoeste (SO)`, `Oeste (O)`, `Noroeste (NO)`.
-  - **Distância:** Distância em blocos até o ponto de spawn ou até a magnetita vinculada.
-- **Lore Automático de Magnetita (1.20.5+ / 26.3):** Ao vincular uma bússola a uma Magnetita (*Lodestone*), a bússola recebe automaticamente uma descrição formatada (*lore*) com as coordenadas exatas e a dimensão do destino, utilizando o formato moderno de componentes NBT.
+### 📚 Multipage Statistics Books (Lecterns)
+Turn any lectern into an interactive, real-time leaderboard book that updates dynamically!
+
+- **Multiple Pages:** Track dozens of different statistics in a single book, one per page.
+- **Clean Headers:** Every page displays a stylized, centered header (e.g. `✦ Jumps ✦`, `✦ Deaths ✦`, `✦ Play Time ✦`) with neat dividers (`───────────`) preventing awkward line wraps.
+- **Real Player Usernames:** Name resolution caching guarantees actual player usernames appear on the podium rather than raw UUIDs.
+- **Top 10 & Podium Styling:** Automatically sorted descending rankings with custom podium prefixes (`1st`, `2nd`, `3rd`, through `10th`).
+- **Audiovisual Feedback:** Enchantment table sound effects, particle bursts, and actionbar confirmation when registering a book.
+
+#### 📖 How to Create a Statistics Book:
+1. Obtain a **Book and Quill**.
+2. On each page, write the identifier or shortcut of the desired statistic (e.g. `jump`, `walk`, `deaths`, `kills`, `enriched.custom.jump`, `sb.custom.time_since_death`).
+3. Sign the book with the title **`EnrichedStats`** (or **`MCStats`**).
+4. Place the signed book onto any **Lectern**. The datapack will activate and format the book immediately!
+
+#### ⚙️ Player Trigger Commands:
+- `/trigger enriched.help` — Displays the in-game help guide and instructions in chat.
+- `/trigger enriched.optin` — Voluntarily opts into statistical tracking.
+- `/trigger enriched.optout` — Opts out of statistics and clears your scores from leaderboards.
+- `/trigger enriched.secret` — Cycles secret mode (hide player names, hide scores, or normal).
 
 ---
 
-### 🕒 Relógio & Relógios de Parede
-Fácil controle do tempo e decoração funcional para suas construções.
+### 🧭 Compass & Advanced Navigation
+Immersive wayfinding right on your actionbar without intrusive screen clutter.
 
-- **Horário na Actionbar (Agachar / Shift):** Agache enquanto segura um relógio (na mão principal ou na mão secundária) para ver o horário formatado (ex: `14:35`) e o número de dias no mundo.
-- **Relógios Digitais de Parede:**
-  - Coloque uma **Moldura** (*Item Frame*) ou **Moldura Brilhante** (*Glow Item Frame*) na parede e insira um relógio nela.
-  - Um mostrador digital holográfico aparecerá sobre a moldura indicando o horário em tempo real.
-  - Ao remover o relógio ou quebrar a moldura, o texto flutuante é limpo automaticamente sem deixar entidades residuais.
-- **Sincronização Anti-Desync:** Proteção e calibração contínua do ciclo dia/noite do mundo.
+- **Actionbar HUD (Sneak / Shift):** Hold a compass (in mainhand or offhand) and sneak to view in real time:
+  - **Coordinates:** `X`, `Y`, `Z`.
+  - **8-Way Cardinal Direction:** `North (N)`, `Northeast (NE)`, `East (E)`, `Southeast (SE)`, `South (S)`, `Southwest (SW)`, `West (W)`, `Northwest (NW)`.
+  - **Distance:** Distance in blocks to world spawn or linked Lodestone.
+- **Automatic Lodestone Lore:** When linking a compass to a Lodestone, it automatically gains structured item lore detailing destination coordinates (`X: ... | Y: ... | Z: ...`) and the dimension name.
 
 ---
 
-### 🎨 Cores e Formatação na Bigorna
-Personalize nomes de itens e blocos diretamente na Bigorna usando códigos intuitivos de estilo Minecraft:
+### 🕒 Clock & Digital Wall Clocks
+Functional timekeeping for day-to-day survival and architectural decoration.
 
-| Código | Efeito | Código | Efeito |
+- **Actionbar HUD (Sneak / Shift):** Sneak while holding a clock to display current in-game time (e.g. `14:35`), calendar day, season, and world year.
+- **Digital Wall Clocks:**
+  - Place an **Item Frame** or **Glow Item Frame** on a wall and insert a clock.
+  - A holographic text display appears over the frame indicating the time in real time.
+  - Breaking the frame or removing the clock instantly despawns the text entity cleanly.
+- **Anti-Desync Protection:** Continuously calibrated against the Minecraft world tick cycle.
+
+---
+
+### 🎨 Anvil Colors & Text Formatting
+Customize item and block names directly in the Anvil using intuitive formatting codes:
+
+| Code | Effect | Code | Effect |
 | :--- | :--- | :--- | :--- |
-| `&0` a `&9` | Cores numéricas (Preto, Azul, Verde, etc.) | `&k` | Texto Mágico / Obfuscado |
-| `&a` a `&f` | Cores em letras (Verde claro, Ciano, etc.) | `&l` | **Negrito** |
-| `&m` | ~~Tachado~~ | `&n` | <u>Sublinhado</u> |
-| `&o` | *Itálico* | `&r` | Resetar formatação |
-| `&z` | 🌈 **Efeito Arco-Íris / Chroma** | `&&` | Escreve o caractere `&` literal |
+| `&0` to `&9` | Numeric colors (Black, Dark Blue, Green, etc.) | `&k` | Obfuscated / Magic text |
+| `&a` to `&f` | Letter colors (Light Green, Aqua, Red, White, etc.) | `&l` | **Bold** |
+| `&m` | ~~Strikethrough~~ | `&n` | <u>Underline</u> |
+| `&o` | *Italic* | `&r` | Reset formatting |
+| `&z` | 🌈 **Rainbow / Chroma Animation Effect** | `&&` | Escaped literal `&` symbol |
 
-*Funciona ao renomear itens na bigorna, aplicando os componentes de exibição nativos do jogo!*
-
----
+*Applies native component-based styling to renamed items upon taking them from the anvil!*
 
 ---
 
-### 🚩 Regiões & Marcadores com Estandartes
-Crie demarcações territoriais simples e imersivas para cidades, bases ou pontos de interesse:
+### 🚩 Banner Regions & Discovery Markers
+Create clean, immersive territory boundaries for towns, bases, and points of interest:
 
-1. Renomeie um **Estandarte** (*Banner*) na bigorna com o nome do local desejado (ex: `Vila dos Ferreiros`).
-2. Coloque o estandarte no chão ou parede.
-3. Um marcador de área invisível será gerado no ponto.
-4. Quando qualquer jogador entrar no raio da área, uma notificação de descoberta aparecerá no centro da tela:
-   - **Título:** Nome da Região em Dourado e Negrito.
-   - **Subtítulo:** *"Área Descoberta"*.
-
----
-
-### 🖼️ Molduras Invisíveis Encantadas
-Sistema clássico e intuitivo de molduras transparentes para construtores, 100% integrado ao survival sem comandos!
-
-- **Receita na Bancada (Crafting Shapeless):**
-  - **Moldura Invisível:** 1x Moldura Comum (*Item Frame*) + 1x Painel de Vidro (*Glass Pane*).
-  - **Moldura Brilhante Invisível:** 1x Moldura Brilhante (*Glow Item Frame*) + 1x Painel de Vidro (*Glass Pane*).
-  - O resultado é um item especial **encantado com brilho**, com nome ciano (*Moldura Invisível*) e lore indicativo.
-
-- **Comportamento Inteligente no Jogo:**
-  - **Vazia:** Enquanto não possuir nenhum item colocado, a moldura permanece **visível** para que você possa posicioná-la e clicar nela com facilidade.
-  - **Com Item:** Assim que qualquer item ou bloco for inserido nela, a moldura se torna **100% invisível** instantaneamente, deixando apenas o item flutuando com elegância na parede, teto ou chão.
-  - **Retirada de Item:** Ao remover o item com o botão esquerdo, a moldura volta a ficar visível para você não perdê-la de vista.
-  - **Ao Quebrar:** Ao destruir a moldura, o item dropado é restaurado com o encantamento e componentes originais, devolvendo a Moldura Invisível para o seu inventário.
+1. Rename any **Banner** in an anvil with your desired region name (e.g. `Blacksmith Village`).
+2. Place the banner onto the ground or a wall.
+3. An invisible area marker will automatically be registered at the location.
+4. When any player enters within a 40-block radius, a discovery title appears on screen:
+   - **Title:** Region Name in Gold & Bold.
+   - **Subtitle:** *"Area Discovered"*.
 
 ---
 
-## 📦 Requisitos & Compatibilidade
+### 🖼️ Enchanted Invisible Item Frames
+A classic, intuitive invisible frame mechanic for builders — 100% survival-friendly without cheats or commands!
 
-- **Versão do Minecraft:** `1.21+` (Pack Format 48 a 81 / Suporte total ao 26.3)
-- **Tipo:** Datapack Vanilla Puro.
-- **Compatibilidade:** Compatível com mundos Singleplayer, servidores Vanilla, Fabric, NeoForge, Paper e Purpur.
+- **Shapeless Crafting Recipes:**
+  - **Invisible Item Frame:** 1x Item Frame + 1x Glass Pane.
+  - **Invisible Glow Item Frame:** 1x Glow Item Frame + 1x Glass Pane.
+  - Produces an enchanted frame item with an aqua title (*Invisible Item Frame*) and descriptive lore.
+
+- **Smart Dynamic Behavior:**
+  - **Empty Frame:** When placed without an item, the frame remains **visible** so you can easily locate and interact with it.
+  - **Holding an Item:** As soon as an item is inserted, the frame becomes **100% invisible**, leaving only the displayed item floating neatly on the wall, ceiling, or floor.
+  - **Item Removal:** Punching or removing the item makes the frame visible again so it is never misplaced.
+  - **Drop Restoration:** Breaking the frame restores the original enchanted item with its custom components intact.
 
 ---
 
-## 🚀 Instalação
+## 📦 Requirements & Compatibility
 
-1. Baixe ou clone esta pasta do datapack.
-2. Coloque a pasta `VanillaEnriched` (ou o diretório descompactado) dentro da pasta `datapacks` do seu mundo:
+- **Minecraft Version:** `1.21+` / `26.3` (Data Component architecture)
+- **Type:** Pure Vanilla Datapack.
+- **Compatibility:** Fully compatible with Singleplayer, Vanilla Server, Fabric, NeoForge, Paper, and Purpur.
+
+---
+
+## 🚀 Installation
+
+1. Download or clone this datapack repository.
+2. Place the datapack folder into your world's `datapacks` directory:
    ```text
-   .minecraft/saves/<SEU_MUNDO>/datapacks/
+   .minecraft/saves/<YOUR_WORLD>/datapacks/
    ```
-3. Dentro do jogo, execute o comando:
+3. In-game, run:
    ```text
    /reload
    ```
-4. A seguinte mensagem confirmará o carregamento no chat:
+4. The following confirmation message will appear in chat:
    ```text
    [Vanilla Enriched] Systems Successfully Loaded!
    ```
 
 ---
 
-## 🛠️ Estrutura do Projeto
+## 🛠️ Project Structure
 
 ```text
 VanillaEnriched/
-├── pack.mcmeta                         # Metadados e compatibilidade do pacote
-├── README.md                           # Documentação completa
-├── spyglass.json                       # Configuração de validação Spyglass (26.3)
+├── pack.mcmeta                         # Pack metadata and format versioning
+├── README.md                           # Documentation
+├── spyglass.json                       # Spyglass validation configuration
 └── data/
     ├── minecraft/
-    │   └── tags/function/              # Tags padrão (#minecraft:load, #minecraft:tick)
+    │   └── tags/function/              # Standard lifecycle tags (#minecraft:load, #minecraft:tick)
     └── main/
         ├── advancement/
-        │   ├── item/stat_book/         # Gatilho de interação com o Atril
-        │   ├── mechanic/invisible_frame# Gatilhos de colocação e interação com molduras
-        │   └── region/                 # Gatilho de colocação de estandartes
+        │   ├── item/stat_book/         # Lectern interaction trigger
+        │   ├── mechanic/invisible_frame# Item frame placement triggers
+        │   └── region/                 # Banner placement trigger
         ├── item_modifier/
-        │   └── item/stat_book/         # Modificadores de dados dos livros
+        │   └── item/stat_book/         # Stat book item data modifiers
         ├── loot_table/
-        │   └── item/stat_book/         # Resolução segura de nomes de jogadores
-        ├── recipe/                     # Receitas de Molduras Invisíveis (com painel de vidro)
-        ├── tags/function/item/stat_book# Hooks de pré-armazenamento e ciclo
+        │   └── item/stat_book/         # Name caching and resolution
+        ├── recipe/                     # Crafting recipes for invisible item frames
+        ├── tags/function/item/stat_book# Function tag hooks
         └── function/
             ├── backend/
-            │   ├── math/               # Utilitários matemáticos (cálculo de distâncias, raiz quadrada)
-            │   └── sort/               # Algoritmo de ordenação de ranking
+            │   ├── math/               # Math utilities (distance, sqrt calculations)
+            │   └── sort/               # Ranking sort algorithms
             ├── item/
-            │   ├── clock/              # Sistema de horário e relógio digital de parede
-            │   ├── compass/            # Navegação, 8 direções cardeais e lore de magnetita
-            │   └── stat_book/          # Gerenciamento de livros, páginas e atrís
+            │   ├── clock/              # Clock HUD & digital wall clock displays
+            │   ├── compass/            # Compass HUD, 8-way cardinal facing & lodestone lore
+            │   └── stat_book/          # Multipage lectern leaderboard system
             ├── mechanic/
-            │   ├── colored_names/      # Interpretador de cores e chroma na bigorna
-            │   ├── invisible_frame/    # Lógica inteligente de molduras invisíveis
-            │   ├── player/             # Detecção de ações (sneak / agachar)
-            │   └── region/             # Sistema de detecção de regiões por estandarte
-            └── setup/                  # Inicialização global (load) e loop principal (tick)
+            │   ├── colored_names/      # Anvil color codes & chroma interpreter
+            │   ├── invisible_frame/    # Dynamic invisible frame logic
+            │   ├── player/             # Player input detection (sneak / crouch)
+            │   └── region/             # Banner-based territory discovery system
+            └── setup/                  # Global init (load) and main tick loop (tick)
 ```
 
 ---
 
-## 📄 Licença
+## 📄 License
 
-Este projeto é de código aberto e está disponível gratuitamente para uso, modificação e distribuição em mundos e servidores de Minecraft.
+This project is open-source and free to use, modify, and distribute for personal worlds and public multiplayer servers.

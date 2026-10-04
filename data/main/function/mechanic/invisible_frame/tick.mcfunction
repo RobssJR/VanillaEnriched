@@ -1,15 +1,15 @@
 # ==============================================================================
-# TICK LOOP: MOLDURAS INVISÍVEIS (Minecraft 26.3)
+# TICK LOOP: INVISIBLE ITEM FRAMES (Minecraft 26.3)
 # ==============================================================================
 
-# 1. Se a moldura estiver vazia e invisível, torna-a visível para o jogador ver onde está
+# 1. If the frame is empty and invisible, make it visible so players can locate it
 execute as @e[tag=main.invisible_frame,nbt={Invisible:1b},nbt=!{Item:{}}] run data modify entity @s Invisible set value false
 
-# 2. Se a moldura tiver um item inserido e estiver visível, torna-a invisível
+# 2. If the frame holds an item and is visible, make it invisible
 execute as @e[tag=main.invisible_frame,nbt={Invisible:0b},nbt={Item:{}}] run data modify entity @s Invisible set value true
 
-# 3. Garante que qualquer moldura invisível tenha um marcador de restauração
+# 3. Ensure every invisible frame has a tracking marker
 execute as @e[tag=main.invisible_frame] at @s unless entity @e[type=marker,tag=main.frame_marker,distance=..0.1] run summon marker ~ ~ ~ {Tags:["main.frame_marker"]}
 
-# 4. Se a moldura foi quebrada/removida, o marcador restaura o drop encantado e se elimina
+# 4. If the frame was broken/removed, marker restores enchanted item drop and kills itself
 execute as @e[type=marker,tag=main.frame_marker] at @s unless entity @e[tag=main.invisible_frame,distance=..0.1] run function main:mechanic/invisible_frame/restore

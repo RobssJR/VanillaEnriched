@@ -1,5 +1,5 @@
-# Macro Function: renderiza o nome dinâmico da região no título da tela do jogador
+# Macro Function: renders dynamic region name on player screen
 $title @s title {"text":"$(region_name)","color":"gold","bold":true}
 
-# Subtítulo fixo de descoberta
-title @s subtitle {"text":"Área Descoberta","color":"gray"}
+# Static discovery subtitle
+title @s subtitle {"text":"Area Discovered","color":"gray"}

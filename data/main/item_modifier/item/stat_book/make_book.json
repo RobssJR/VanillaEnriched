@@ -5,7 +5,7 @@
 			"type": "minecraft:set_name",
 			"name": {
 				"translate": "enriched.book.title",
-				"fallback": "Livro de Estatísticas",
+				"fallback": "Statistics Book",
 				"italic": false,
 				"color": "gold"
 			}
@@ -15,15 +15,15 @@
 			"lore": [
 				{
 					"translate": "enriched.book.lore.1",
-					"fallback": "Lista automaticamente as estatísticas dos jogadores."
+					"fallback": "Automatically tracks player statistics."
 				},
 				{
 					"translate": "enriched.book.lore.2",
-					"fallback": "Necessita estar posicionado em um atril."
+					"fallback": "Must be placed on a lectern."
 				},
 				{
 					"translate": "enriched.book.lore.3",
-					"fallback": "Estatística rastreada:"
+					"fallback": "Tracked statistic:"
 				},
 				{
 					"nbt": "newBook.value",
