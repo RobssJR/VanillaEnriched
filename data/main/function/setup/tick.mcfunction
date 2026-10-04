@@ -1,6 +1,6 @@
 # 1. Anti-Desync (Chunkloader Protection)
-# O tempo so corre se houver algum jogador online
-# Usa a sintaxe nova da 1.26+ (advance_time)
+# Time only advances if at least one player is online
+# Uses modern gamerule advance_time syntax
 execute store result score .doDaylight vplus_state run gamerule advance_time
 execute if entity @a if score .doDaylight vplus_state matches 0 run time add 1
 
@@ -42,8 +42,8 @@ execute as @e[tag=enriched.name_fetch] run kill @s
 # 9. Invisible Item Frames
 function main:mechanic/invisible_frame/tick
 
-# 10. Custom Decorative Player Heads
+# 10. Custom Decorative Player Heads (Throttled every 4 ticks)
 execute if score .color_timer vplus_math matches 0 as @a run function main:mechanic/custom_head/check_player
-execute as @e[type=item] if items entity @s contents minecraft:player_head run function main:mechanic/custom_head/check_dropped
+execute if score .color_timer vplus_math matches 0 as @e[type=item] if items entity @s contents player_head[custom_data~{can_transform:"1b"}] run function main:mechanic/custom_head/check_dropped
 
 
