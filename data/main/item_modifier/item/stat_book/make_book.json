@@ -1,0 +1,56 @@
+{
+	"type": "minecraft:sequence",
+	"functions": [
+		{
+			"type": "minecraft:set_name",
+			"name": {
+				"translate": "enriched.book.title",
+				"fallback": "Livro de Estatísticas",
+				"italic": false,
+				"color": "gold"
+			}
+		},
+		{
+			"type": "minecraft:set_lore",
+			"lore": [
+				{
+					"translate": "enriched.book.lore.1",
+					"fallback": "Lista automaticamente as estatísticas dos jogadores."
+				},
+				{
+					"translate": "enriched.book.lore.2",
+					"fallback": "Necessita estar posicionado em um atril."
+				},
+				{
+					"translate": "enriched.book.lore.3",
+					"fallback": "Estatística rastreada:"
+				},
+				{
+					"nbt": "newBook.value",
+					"storage": "enriched:tmp",
+					"color": "yellow"
+				}
+			],
+			"entity": "this",
+			"mode": "replace_all"
+		},
+		{
+			"type": "minecraft:set_custom_data",
+			"tag": "{statBook: true}"
+		},
+		{
+			"type": "minecraft:copy_custom_data",
+			"source": {
+				"type": "minecraft:storage",
+				"source": "enriched:tmp"
+			},
+			"ops": [
+				{
+					"source": "newBook.value",
+					"target": "stat",
+					"op": "replace"
+				}
+			]
+		}
+	]
+}

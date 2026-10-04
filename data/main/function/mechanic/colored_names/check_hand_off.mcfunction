@@ -1,5 +1,6 @@
-# Extract player's offhand item to storage (Minecraft 26.3+ equipment format)
-data modify storage main:mechanic/colored_names/temp hand_item set from entity @s equipment.offhand
+# Extract player's offhand item to storage (supports Inventory Slot -106b and equipment.offhand)
+data modify storage main:mechanic/colored_names/temp hand_item set from entity @s Inventory[{Slot:-106b}]
+execute unless data storage main:mechanic/colored_names/temp hand_item run data modify storage main:mechanic/colored_names/temp hand_item set from entity @s equipment.offhand
 
 # Extract the current custom name
 data modify storage main:mechanic/colored_names/temp current_name set from storage main:mechanic/colored_names/temp hand_item.components."minecraft:custom_name"

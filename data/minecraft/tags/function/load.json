@@ -1,1 +1,7 @@
-{ "values": [ "main:setup/load" ] }
+{
+  "values": [
+    "main:setup/load"
+  ]
+}
+
+

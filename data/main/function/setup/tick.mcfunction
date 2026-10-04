@@ -8,10 +8,12 @@ execute if entity @a if score .doDaylight vplus_state matches 0 run time add 1
 function main:item/clock/time_calc
 
 # 3. Wall Clocks Update
+# 1-Second Global Timer (20 ticks) used across periodic 1s systems
+scoreboard players add .tick_20t vplus_math 1
+execute if score .tick_20t vplus_math matches 20.. run scoreboard players set .tick_20t vplus_math 0
+
 # Scan for new wall clocks every 20 ticks (1 second)
-scoreboard players add .wc_timer vplus_math 1
-execute if score .wc_timer vplus_math matches 20.. run scoreboard players set .wc_timer vplus_math 0
-execute if score .wc_timer vplus_math matches 0 run function main:item/clock/wallclock_scan
+execute if score .tick_20t vplus_math matches 0 run function main:item/clock/wallclock_scan
 
 # Update wall clocks text when minute changes
 execute unless score .minute vplus_math = .last_minute vplus_math run function main:item/clock/wallclock_update
@@ -29,3 +31,11 @@ execute as @e[type=item,tag=!color_checked] run function main:mechanic/colored_n
 
 # 6. Auto-Compass Lore
 execute as @a run function main:item/compass/check_compass_lore
+
+# 7. Statistic Books & Lecterns (Triggers - Every 20 ticks / 1 second)
+execute if score .tick_20t vplus_math matches 0 run function main:item/stat_book/tick
+
+# 8. Instant Lectern Entity Cleanup (Runs every single tick)
+execute as @e[tag=enriched.lectern] at @s align xyz unless block ~ ~ ~ minecraft:lectern run kill @s
+execute as @e[tag=enriched.name_fetch] run kill @s
+

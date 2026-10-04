@@ -12,7 +12,7 @@ scoreboard players set .24000 vplus_math 24000
 scoreboard players set .28 vplus_math 28
 scoreboard players set .112 vplus_math 112
 scoreboard players set .-1 vplus_math -1
-scoreboard players set .wc_timer vplus_math 0
+scoreboard players set .tick_20t vplus_math 0
 scoreboard players set .last_minute vplus_math -1
 scoreboard players set .color_timer vplus_math 0
 scoreboard players set .rainbow_idx vplus_math 0
@@ -25,6 +25,9 @@ execute in minecraft:overworld run setblock 0 319 0 minecraft:barrel keep
 scoreboard objectives add vp_player_id dummy
 schedule function main:mechanic/region/tracker_loop 20t replace
 schedule function main:mechanic/region/clean_loop 100t replace
+
+# Statistic Books Initialization
+function main:item/stat_book/load
 
 # Notify players of successful load
 tellraw @a {"text":"[VanillaPlus Core] Systems Successfully Loaded!","color":"green"}
