@@ -9,6 +9,7 @@ data modify block 0 319 0 Items[0].components."minecraft:profile" set value {pro
 
 # Remove can_transform flag
 data remove block 0 319 0 Items[0].components."minecraft:custom_data".can_transform
+data remove block 0 319 0 Items[0].components."minecraft:custom_data".decorative_head
 
 # Mark success flag
 data modify storage main:custom_head transformed set value 1b
