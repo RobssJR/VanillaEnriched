@@ -68,30 +68,38 @@ Place **8x Leather** surrounding **1x Carved Pumpkin** in a Crafting Table:
 > **Result:** A `Decorative Player Head` item with the lore:  
 > *"Rename this to any player to get their head!"*
 
-#### 🔨 How to Transform:
+#### 🔨 How to Transform Heads:
+
+##### Option A: Player Nicknames & MHF Heads (via Anvil)
 1. Place the crafted `Decorative Player Head` into the left slot of an **Anvil**.
-2. In the rename text box, type any valid player username (e.g. `Notch`, `Dinnerbone`, `RobssJR`).
+2. In the rename text box, type any valid player username (e.g. `Notch`, `Dinnerbone`, `RobssJR`) or MHF account name.
 3. Take the head out of the anvil output slot (costs 1 XP level).
-4. **Boom!** The skull instantly transforms into that player's genuine skin, complete with chime sound effects and sparkle particles. Minecraft dynamically renames the item to `<Player>'s Head`!
+4. **Boom!** The skull instantly transforms into that player's genuine skin!
 
-> [!TIP]
-> ### 🌐 Looking for thousands of custom heads?
-> Visit **[Minecraft-Heads.com](https://minecraft-heads.com/)** to browse a massive database of over 50,000+ custom heads!
-> 
-> 1. Go to **[minecraft-heads.com](https://minecraft-heads.com/)** and browse the categories (Food, Animals, Furniture, Characters, Blocks, etc.).
-> 2. Click on any head you like.
-> 3. Under the head details, find the **"Player / Head Name"** (or MHF account name).
-> 4. Type that exact name in your anvil to get that head in-game!
+##### Option B: Universal Custom Heads from minecraft-heads.com (via Book & Quill)
+For custom heads that do **not** have a player nickname (like decorative pots, logs, furniture, food, etc.):
 
-#### 🎁 Built-in Decorative Block Heads (MHF Accounts):
-Mojang provides official decorative mini-block heads through Marc's Head Format (MHF) accounts. Simply type any of these names into the anvil:
+1. Go to **[minecraft-heads.com](https://minecraft-heads.com/)** and find any custom head you want.
+2. Click **"Copy"** next to the **"Value:"** field (this copies the Base64 texture string starting with `eyJ0...`).
+3. In Minecraft, take a **Book and Quill** (or signed book titled `CustomHead`):
+   - **Page 1:** Paste the Base64 **Value**.
+   - **Page 2 (Optional):** Type the display name for the head (e.g. `Poplar Log`, `Burn Pot`).
+4. **Trigger the Transformation:**
+   - **In Hands:** Hold the `Decorative Player Head` in your mainhand and the book in your offhand (or vice-versa).
+   - **OR On Ground:** Throw both the `Decorative Player Head` and the book onto the ground together!
+5. **Sparkle & Level-up chime!** The head immediately transforms into that custom head with its unique texture and custom name!
+6. *Note:* Your book is **not consumed** so you can reuse it whenever you want!
 
-| Category | In-Game Anvil Names |
+#### 🎁 Built-in Decorative Block Heads & Presets:
+Mojang provides official decorative mini-block heads through Marc's Head Format (MHF) accounts, plus built-in quick presets:
+
+| Category | In-Game Anvil Names / IDs |
 | :--- | :--- |
 | **Blocks & Food** | `MHF_Chest`, `MHF_Cake`, `MHF_TNT`, `MHF_Cactus`, `MHF_Melon`, `MHF_Pumpkin`, `MHF_OakLog` |
 | **Monsters & Animals** | `MHF_Blaze`, `MHF_Enderman`, `MHF_Spider`, `MHF_Cow`, `MHF_Pig`, `MHF_Sheep`, `MHF_Chicken` |
 | **Direction Arrows** | `MHF_ArrowUp`, `MHF_ArrowDown`, `MHF_ArrowLeft`, `MHF_ArrowRight` |
-| **Bonus Preset** | `Giant Honey Dipper` or `129904` *(Custom textured head from minecraft-heads.com)* |
+| **Built-in Presets** | `Giant Honey Dipper` (`129904`), `Burn Pot` (`129856`), `Poplar Log` (`129843`) |
+
 
 ---
 

@@ -45,5 +45,19 @@ execute if data storage main:custom_head {raw_name:"Giant Honey Dipper"} run ret
 execute if data storage main:custom_head {raw_name:"giant honey dipper"} run return run function main:mechanic/custom_head/preset_honey_dipper
 execute if data storage main:custom_head {raw_name:"129904"} run return run function main:mechanic/custom_head/preset_honey_dipper
 
+execute if data storage main:custom_head {name:"Burn Pot"} run return run function main:mechanic/custom_head/preset_burn_pot
+execute if data storage main:custom_head {name:"burn pot"} run return run function main:mechanic/custom_head/preset_burn_pot
+execute if data storage main:custom_head {name:"129856"} run return run function main:mechanic/custom_head/preset_burn_pot
+execute if data storage main:custom_head {raw_name:"Burn Pot"} run return run function main:mechanic/custom_head/preset_burn_pot
+execute if data storage main:custom_head {raw_name:"burn pot"} run return run function main:mechanic/custom_head/preset_burn_pot
+execute if data storage main:custom_head {raw_name:"129856"} run return run function main:mechanic/custom_head/preset_burn_pot
+
+execute if data storage main:custom_head {name:"Poplar Log"} run return run function main:mechanic/custom_head/preset_poplar_log
+execute if data storage main:custom_head {name:"poplar log"} run return run function main:mechanic/custom_head/preset_poplar_log
+execute if data storage main:custom_head {name:"129843"} run return run function main:mechanic/custom_head/preset_poplar_log
+execute if data storage main:custom_head {raw_name:"Poplar Log"} run return run function main:mechanic/custom_head/preset_poplar_log
+execute if data storage main:custom_head {raw_name:"poplar log"} run return run function main:mechanic/custom_head/preset_poplar_log
+execute if data storage main:custom_head {raw_name:"129843"} run return run function main:mechanic/custom_head/preset_poplar_log
+
 # 9. Transform to player profile
 function main:mechanic/custom_head/apply_player_profile
