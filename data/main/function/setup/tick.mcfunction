@@ -32,7 +32,7 @@ execute as @e[type=item,tag=!color_checked] run function main:mechanic/colored_n
 # 6. Auto-Compass Lore
 execute as @a run function main:item/compass/check_compass_lore
 
-# 7. Statistic Books & Lecterns (Triggers - Every 20 ticks / 1 second)
+# 7. Statistic Books & Lecterns (Periodic maintenance - Every 20 ticks / 1 second)
 execute if score .tick_20t vplus_math matches 0 run function main:item/stat_book/tick
 
 # 8. Instant Lectern Entity Cleanup (Runs every single tick)

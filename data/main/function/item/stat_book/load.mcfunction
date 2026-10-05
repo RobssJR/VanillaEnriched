@@ -1,21 +1,21 @@
-# Setup core scoreboards & triggers
+# Setup core scoreboards (pure survival, no player commands required)
 scoreboard objectives add enriched.settings dummy
 scoreboard objectives add enriched.optedin dummy
-scoreboard objectives add enriched.optin trigger
-scoreboard objectives add enriched.update trigger
-scoreboard objectives add enriched.secret trigger
-scoreboard objectives add enriched.help trigger
 
-# Remove enriched.stats if existing
+# Remove any legacy triggers from previous versions
+scoreboard objectives remove enriched.optin
+scoreboard objectives remove enriched.update
+scoreboard objectives remove enriched.secret
+scoreboard objectives remove enriched.help
 scoreboard objectives remove enriched.stats
 
 # Initialize all 76 player statistics (enriched.custom.jump, walk, deaths, etc.)
 function main:item/stat_book/setup_custom_stats
 
-# Setup default settings if not configured
-execute unless score refreshType enriched.settings = refreshType enriched.settings run scoreboard players set refreshType enriched.settings 0
-execute unless score autoOptIn enriched.settings = autoOptIn enriched.settings run scoreboard players set autoOptIn enriched.settings 1
-execute unless score allowSecret enriched.settings = allowSecret enriched.settings run scoreboard players set allowSecret enriched.settings 1
+# Setup automatic settings (all players tracked automatically, auto-refreshed)
+scoreboard players set refreshType enriched.settings 0
+scoreboard players set autoOptIn enriched.settings 1
+scoreboard players set allowSecret enriched.settings 0
 
 # Setup storage collections if not existing
 execute store success score #s vplus_math if data storage enriched:tracking tracked

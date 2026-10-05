@@ -1,11 +1,12 @@
 # 🌟 Vanilla Enriched
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-RobssJR%2FVanillaEnriched-blue?logo=github)](https://github.com/RobssJR/VanillaEnriched)
 ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21%2B%20%2F%2026.3-brightgreen)
 ![Datapack Type](https://img.shields.io/badge/Type-Vanilla%20Datapack-blue)
 ![Dependencies](https://img.shields.io/badge/Dependencies-None%20(Pure%20Vanilla)-orange)
-![Survival Ready](https://img.shields.io/badge/Survival-100%25%20Friendly-success)
+![Pure Survival](https://img.shields.io/badge/Commands%20Required-0%20(Pure%20Survival)-success)
 
-**Vanilla Enriched** is a modular, high-performance survival enhancement datapack. It brings modern Quality of Life (QoL) features, immersive navigation HUDs, customizable decorative player heads, dynamic invisible item frames, holographic wall clocks, territory discovery titles, and automated lectern leaderboards to your world — **100% vanilla, with zero client or server mods required!**
+**Vanilla Enriched** is a modular, high-performance survival enhancement datapack. It brings modern Quality of Life (QoL) features, immersive navigation HUDs, customizable decorative player heads, dynamic invisible item frames, holographic wall clocks, territory discovery titles, and automated lectern leaderboards to your world — **100% vanilla, pure survival, with zero commands or mods required!**
 
 ---
 
@@ -20,7 +21,6 @@
   - [5. 🎨 Anvil Colors & Chroma Text Formatting](#5--anvil-colors--chroma-text-formatting)
   - [6. 🚩 Banner Territories & Area Discovery](#6--banner-territories--area-discovery)
   - [7. 📚 Multipage Statistics Books & Lecterns](#7--multipage-statistics-books--lecterns)
-- [⚙️ Commands & Player Triggers](#️-commands--player-triggers)
 - [❓ Frequently Asked Questions (FAQ) & Troubleshooting](#-frequently-asked-questions-faq--troubleshooting)
 - [🛠️ Architecture & File Structure](#️-architecture--file-structure)
 - [📄 License](#-license)
@@ -30,7 +30,7 @@
 ## 🚀 Quick Start & Installation
 
 ### Singleplayer:
-1. Download or clone this repository.
+1. Download or clone this repository from [GitHub](https://github.com/RobssJR/VanillaEnriched).
 2. Locate your Minecraft world directory:
    ```text
    %appdata%/.minecraft/saves/<YOUR_WORLD>/datapacks/
@@ -73,6 +73,15 @@ Place **8x Leather** surrounding **1x Carved Pumpkin** in a Crafting Table:
 2. In the rename text box, type any valid player username (e.g. `Notch`, `Dinnerbone`, `RobssJR`).
 3. Take the head out of the anvil output slot (costs 1 XP level).
 4. **Boom!** The skull instantly transforms into that player's genuine skin, complete with chime sound effects and sparkle particles. Minecraft dynamically renames the item to `<Player>'s Head`!
+
+> [!TIP]
+> ### 🌐 Looking for thousands of custom heads?
+> Visit **[Minecraft-Heads.com](https://minecraft-heads.com/)** to browse a massive database of over 50,000+ custom heads!
+> 
+> 1. Go to **[minecraft-heads.com](https://minecraft-heads.com/)** and browse the categories (Food, Animals, Furniture, Characters, Blocks, etc.).
+> 2. Click on any head you like.
+> 3. Under the head details, find the **"Player / Head Name"** (or MHF account name).
+> 4. Type that exact name in your anvil to get that head in-game!
 
 #### 🎁 Built-in Decorative Block Heads (MHF Accounts):
 Mojang provides official decorative mini-block heads through Marc's Head Format (MHF) accounts. Simply type any of these names into the anvil:
@@ -195,7 +204,7 @@ Create clean territory boundaries for your bases, villages, farms, and shops wit
 
 ### 7. 📚 Multipage Statistics Books & Lecterns
 
-Transform standard lecterns into real-time, interactive survival leaderboard podiums!
+Transform standard lecterns into real-time, interactive survival leaderboard podiums — **100% automated with zero player commands needed!**
 
 #### 📖 How to Setup a Leaderboard:
 1. Craft a **Book and Quill**.
@@ -207,24 +216,18 @@ Transform standard lecterns into real-time, interactive survival leaderboard pod
    - Page 5: `sb.custom.time_since_death` (Survival time)
 3. Sign the book with the title: **`EnrichedStats`** (or **`MCStats`**).
 4. Place the signed book onto any **Lectern**.
-5. The datapack formats the book with neat centered headers (`✦ Jumps ✦`), descending sorted rankings, and player usernames!
-
----
-
-## ⚙️ Commands & Player Triggers
-
-All players (even without OP / cheats enabled) have access to player triggers:
-
-| Command | Description |
-| :--- | :--- |
-| `/trigger enriched.help` | Opens the in-game help menu and guide in chat. |
-| `/trigger enriched.optin` | Opts your player into the statistic leaderboard rankings. |
-| `/trigger enriched.optout` | Opts out of public statistics and removes your scores from lecterns. |
-| `/trigger enriched.secret` | Toggles privacy mode on stat books (anonymize names or scores). |
+5. The datapack automatically formats the book with neat centered headers (`✦ Jumps ✦`), descending sorted rankings, and actual player usernames! All players on the world/server are tracked automatically.
 
 ---
 
 ## ❓ Frequently Asked Questions (FAQ) & Troubleshooting
+
+<details>
+<summary><b>Q: Do players need to type any commands or opt-in?</b></summary>
+<p>
+<b>No!</b> Vanilla Enriched is completely command-free for players. All statistics, transformations, crafting recipes, and HUDs work 100% through normal survival gameplay.
+</p>
+</details>
 
 <details>
 <summary><b>Q: Do other players need to install any mod or resource pack to see these features?</b></summary>
