@@ -180,6 +180,13 @@ Add vibrant colors, styles, and animated rainbow formatting to item names right 
 | `&k` | Obfuscated (Magic) | `&r` | Reset format |
 | `&z` | 🌈 **Animated Rainbow / Chroma** | `&&` | Literal `&` character |
 
+#### 💎 Always 1 XP Renaming & No "Too Expensive" Lock:
+- In vanilla Minecraft, every time an item is enchanted with a book or repaired, its internal `RepairCost` increases exponentially (1 -> 3 -> 7 -> 15 -> 31...), causing renames to cost 30+ levels or lock with **"Too Expensive!"**.
+- Vanilla Enriched automatically wipes prior work penalties from your inventory items:
+  - **Renaming any item always costs exactly 1 XP level**, no matter how many times it was enchanted or combined!
+  - Items never get locked out with "Too Expensive!".
+  - Base book enchantment costs and material repair costs are preserved fairly.
+
 #### 📝 Examples:
 - `&6&lLegendary Sword` ──> **Legendary Sword** (Bold Gold)
 - `&bFrost &3Walker` ──> Frost Walker (Aqua & Dark Aqua)
@@ -285,6 +292,7 @@ VanillaEnriched/
     │   └── tags/function/              # Load and Tick hooks
     └── main/
         ├── advancement/                # Event triggers (lectern, frames, banners)
+        ├── item_modifier/              # Custom modifiers (stat book, repair cost reset)
         ├── recipe/                     # Crafting recipes (heads, invisible frames)
         └── function/
             ├── backend/math/           # Sqrt and distance algorithms
@@ -292,6 +300,7 @@ VanillaEnriched/
             ├── item/clock/             # Clock HUD & wall clock displays
             ├── item/compass/           # Compass HUD & 8-way cardinal facing
             ├── item/stat_book/         # Multipage lectern leaderboard system
+            ├── mechanic/anvil_cost/    # 1 XP rename guarantee & repair penalty reset
             ├── mechanic/colored_names/ # Anvil color & chroma interpreter
             ├── mechanic/custom_head/   # Decorative player head transformation
             ├── mechanic/invisible_frame# Dynamic invisible frame logic
