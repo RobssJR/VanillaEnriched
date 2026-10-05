@@ -208,15 +208,34 @@ Transform standard lecterns into real-time, interactive survival leaderboard pod
 
 #### 📖 How to Setup a Leaderboard:
 1. Craft a **Book and Quill**.
-2. On each page, write the identifier of the statistic you want to track on that page:
-   - Page 1: `jump` (Total jumps)
-   - Page 2: `deaths` (Total deaths)
-   - Page 3: `kills` (Mob kills)
-   - Page 4: `walk` (Distance walked)
-   - Page 5: `sb.custom.time_since_death` (Survival time)
+2. On each page, write the identifier or shortcut of the statistic you want to track on that page:
+   - **General Stats:**
+     - `jump` (Total jumps)
+     - `deaths` (Total deaths)
+     - `kills` (Mob kills)
+     - `player_kills` (PvP kills)
+     - `walk` (Distance walked)
+     - `fly` (Elytra / flight distance)
+     - `play_time` (Total play time)
+     - `time_since_death` (Survival streak time)
+     - `damage_dealt` / `damage_taken`
+   - **Block Mining Stats (Shortcuts):**
+     - `diamonds` / `diamantes` (Diamond ore & deepslate diamond ore)
+     - `debris` / `netherite` (Ancient debris)
+     - `iron` / `ferro` (Iron ore & deepslate iron ore)
+     - `gold` / `ouro` (Gold ore, deepslate gold ore & nether gold ore)
+     - `copper` / `cobre` (Copper ore & deepslate copper ore)
+     - `coal` / `carvao` (Coal ore & deepslate coal ore)
+     - `lapis` / `emerald` / `redstone`
+     - `stone` / `pedra` (Stone, cobble & deepslate)
+     - `obsidian` / `obsidiana`
+     - `wood` / `madeira` / `logs` (All log types)
+     - `spawner` / `sculk` / `crying_obsidian`
+   - **Any Vanilla Block (`mined:<block_id>`):**
+     - You can track *any* Minecraft block by typing `mined:<block>` (e.g. `mined:glowstone`, `mined:amethyst_cluster`, `mined:beacon`, `mined:tnt`). The datapack creates the tracking objective dynamically!
 3. Sign the book with the title: **`EnrichedStats`** (or **`MCStats`**).
 4. Place the signed book onto any **Lectern**.
-5. The datapack automatically formats the book with neat centered headers (`✦ Jumps ✦`), descending sorted rankings, and actual player usernames! All players on the world/server are tracked automatically.
+5. The datapack automatically formats the book with neat centered headers (`✦ Diamonds Mined ✦`), descending sorted rankings, and actual player usernames! All players on the world/server are tracked automatically.
 
 ---
 

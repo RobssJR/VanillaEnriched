@@ -75,3 +75,78 @@ scoreboard objectives add enriched.custom.use_cauldron custom:use_cauldron
 scoreboard objectives add enriched.custom.walk_on_water_one_cm custom:walk_on_water_one_cm
 scoreboard objectives add enriched.custom.walk_one_cm custom:walk_one_cm
 scoreboard objectives add enriched.custom.walk_under_water_one_cm custom:walk_under_water_one_cm
+
+# ==============================================================================
+# MINED BLOCK STATISTICS (Ores, Excavation, Building, Trees & Specials)
+# ==============================================================================
+
+# Ores & Valuables
+scoreboard objectives add enriched.mined.diamond_ore mined:diamond_ore
+scoreboard objectives add enriched.mined.deepslate_diamond_ore mined:deepslate_diamond_ore
+scoreboard objectives add enriched.mined.ancient_debris mined:ancient_debris
+scoreboard objectives add enriched.mined.iron_ore mined:iron_ore
+scoreboard objectives add enriched.mined.deepslate_iron_ore mined:deepslate_iron_ore
+scoreboard objectives add enriched.mined.gold_ore mined:gold_ore
+scoreboard objectives add enriched.mined.deepslate_gold_ore mined:deepslate_gold_ore
+scoreboard objectives add enriched.mined.nether_gold_ore mined:nether_gold_ore
+scoreboard objectives add enriched.mined.coal_ore mined:coal_ore
+scoreboard objectives add enriched.mined.deepslate_coal_ore mined:deepslate_coal_ore
+scoreboard objectives add enriched.mined.copper_ore mined:copper_ore
+scoreboard objectives add enriched.mined.deepslate_copper_ore mined:deepslate_copper_ore
+scoreboard objectives add enriched.mined.emerald_ore mined:emerald_ore
+scoreboard objectives add enriched.mined.deepslate_emerald_ore mined:deepslate_emerald_ore
+scoreboard objectives add enriched.mined.lapis_ore mined:lapis_ore
+scoreboard objectives add enriched.mined.deepslate_lapis_ore mined:deepslate_lapis_ore
+scoreboard objectives add enriched.mined.nether_quartz_ore mined:nether_quartz_ore
+scoreboard objectives add enriched.mined.redstone_ore mined:redstone_ore
+scoreboard objectives add enriched.mined.deepslate_redstone_ore mined:deepslate_redstone_ore
+
+# Stone, Deepslate & Excavation
+scoreboard objectives add enriched.mined.stone mined:stone
+scoreboard objectives add enriched.mined.deepslate mined:deepslate
+scoreboard objectives add enriched.mined.cobblestone mined:cobblestone
+scoreboard objectives add enriched.mined.cobbled_deepslate mined:cobbled_deepslate
+scoreboard objectives add enriched.mined.diorite mined:diorite
+scoreboard objectives add enriched.mined.andesite mined:andesite
+scoreboard objectives add enriched.mined.granite mined:granite
+scoreboard objectives add enriched.mined.tuff mined:tuff
+scoreboard objectives add enriched.mined.calcite mined:calcite
+scoreboard objectives add enriched.mined.dirt mined:dirt
+scoreboard objectives add enriched.mined.grass_block mined:grass_block
+scoreboard objectives add enriched.mined.sand mined:sand
+scoreboard objectives add enriched.mined.gravel mined:gravel
+scoreboard objectives add enriched.mined.clay mined:clay
+scoreboard objectives add enriched.mined.obsidian mined:obsidian
+scoreboard objectives add enriched.mined.crying_obsidian mined:crying_obsidian
+scoreboard objectives add enriched.mined.netherrack mined:netherrack
+scoreboard objectives add enriched.mined.basalt mined:basalt
+scoreboard objectives add enriched.mined.blackstone mined:blackstone
+scoreboard objectives add enriched.mined.soul_sand mined:soul_sand
+scoreboard objectives add enriched.mined.soul_soil mined:soul_soil
+scoreboard objectives add enriched.mined.end_stone mined:end_stone
+
+# Wood & Logs
+scoreboard objectives add enriched.mined.oak_log mined:oak_log
+scoreboard objectives add enriched.mined.spruce_log mined:spruce_log
+scoreboard objectives add enriched.mined.birch_log mined:birch_log
+scoreboard objectives add enriched.mined.jungle_log mined:jungle_log
+scoreboard objectives add enriched.mined.acacia_log mined:acacia_log
+scoreboard objectives add enriched.mined.dark_oak_log mined:dark_oak_log
+scoreboard objectives add enriched.mined.mangrove_log mined:mangrove_log
+scoreboard objectives add enriched.mined.cherry_log mined:cherry_log
+scoreboard objectives add enriched.mined.crimson_stem mined:crimson_stem
+scoreboard objectives add enriched.mined.warped_stem mined:warped_stem
+
+# Special Blocks
+scoreboard objectives add enriched.mined.spawner mined:spawner
+scoreboard objectives add enriched.mined.amethyst_cluster mined:amethyst_cluster
+scoreboard objectives add enriched.mined.sculk mined:sculk
+scoreboard objectives add enriched.mined.sculk_catalyst mined:sculk_catalyst
+scoreboard objectives add enriched.mined.sculk_shrieker mined:sculk_shrieker
+scoreboard objectives add enriched.mined.sponge mined:sponge
+scoreboard objectives add enriched.mined.wet_sponge mined:wet_sponge
+scoreboard objectives add enriched.mined.ice mined:ice
+scoreboard objectives add enriched.mined.packed_ice mined:packed_ice
+scoreboard objectives add enriched.mined.blue_ice mined:blue_ice
+scoreboard objectives add enriched.mined.glowstone mined:glowstone
+scoreboard objectives add enriched.mined.sea_lantern mined:sea_lantern
