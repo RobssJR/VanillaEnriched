@@ -2,6 +2,9 @@
 data modify storage enriched:tmp book.obj set from storage enriched:tmp stats_queue[0]
 data modify storage enriched:tmp obj.obj set from storage enriched:tmp stats_queue[0]
 
+# Ensure objective entry exists in tracking storage
+function main:item/stat_book/store_setup_storage with storage enriched:tmp obj
+
 # Update online players' scores for this statistic
 execute if score autoOptIn enriched.settings matches 1 as @a at @s run function main:item/stat_book/store_player
 execute if score autoOptIn enriched.settings matches 0 as @a[scores={enriched.optedin=1}] at @s run function main:item/stat_book/store_player

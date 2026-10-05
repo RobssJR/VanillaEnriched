@@ -8,6 +8,5 @@ execute if score #previous vplus_math < #tmp vplus_math run scoreboard players s
 scoreboard players operation #previous vplus_math = #tmp vplus_math
 
 scoreboard players add #i vplus_math 1
-scoreboard players remove #length vplus_math 1
 
-execute if score #i vplus_math < #length vplus_math run function main:backend/sort/search_inner with storage sort:search
+execute if data storage sort:search tmpArray[0] run function main:backend/sort/search_inner with storage sort:search

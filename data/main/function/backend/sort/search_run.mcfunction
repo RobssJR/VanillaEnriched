@@ -14,4 +14,5 @@ execute if score #isSorted vplus_math matches 1 run return 1
 execute store result storage sort:search i int 1 run scoreboard players get #highestIndex vplus_math
 function main:backend/sort/search_copy with storage sort:search
 
+execute store result score #length vplus_math run data get storage sort:search array
 execute if score #length vplus_math matches 1.. run function main:backend/sort/search_run with storage sort:search

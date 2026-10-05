@@ -1,6 +1,8 @@
-# Remove existing entry if any (clears out previous empty records)
+# Remove existing entry if any
 $data remove storage enriched:tracking names[{uuid:$(UUID)}]
 
-# Save resolved name under player's UUID
-$data modify storage enriched:tracking names append value {uuid:$(UUID), name:""}
-$data modify storage enriched:tracking names[{uuid:$(UUID)}].name set from storage enriched:tmp name
+# Build new entry and append directly to storage
+data modify storage enriched:tmp new_name_entry set value {name:""}
+$data modify storage enriched:tmp new_name_entry.uuid set value $(UUID)
+data modify storage enriched:tmp new_name_entry.name set from storage enriched:tmp name
+data modify storage enriched:tracking names append from storage enriched:tmp new_name_entry
