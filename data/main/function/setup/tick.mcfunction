@@ -44,6 +44,6 @@ function main:mechanic/invisible_frame/tick
 
 # 10. Custom Decorative Player Heads (Throttled every 4 ticks)
 execute if score .color_timer vplus_math matches 0 as @a run function main:mechanic/custom_head/check_player
-execute if score .color_timer vplus_math matches 0 as @e[type=item] if items entity @s contents player_head[custom_data~{can_transform:"1b"}] run function main:mechanic/custom_head/check_dropped
+execute if score .color_timer vplus_math matches 0 as @e[type=item] if items entity @s contents player_head[!custom_data~{head_applied:1b}] run function main:mechanic/custom_head/check_dropped
 
 

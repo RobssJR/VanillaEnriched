@@ -76,19 +76,18 @@ Place **8x Leather** surrounding **1x Carved Pumpkin** in a Crafting Table:
 3. Take the head out of the anvil output slot (costs 1 XP level).
 4. **Boom!** The skull instantly transforms into that player's genuine skin!
 
-##### Option B: Universal Custom Heads from minecraft-heads.com (via Book & Quill)
+##### Option B: Sculpting Custom Heads from Manual (Atril / Lectern)
 For custom heads that do **not** have a player nickname (like decorative pots, logs, furniture, food, etc.):
 
-1. Go to **[minecraft-heads.com](https://minecraft-heads.com/)** and find any custom head you want.
-2. Click **"Copy"** next to the **"Value:"** field (this copies the Base64 texture string starting with `eyJ0...`).
-3. In Minecraft, take a **Book and Quill** (or signed book titled `CustomHead`):
-   - **Page 1:** Paste the Base64 **Value**.
-   - **Page 2 (Optional):** Type the display name for the head (e.g. `Poplar Log`, `Burn Pot`).
-4. **Trigger the Transformation:**
-   - **In Hands:** Hold the `Decorative Player Head` in your mainhand and the book in your offhand (or vice-versa).
-   - **OR On Ground:** Throw both the `Decorative Player Head` and the book onto the ground together!
-5. **Sparkle & Level-up chime!** The head immediately transforms into that custom head with its unique texture and custom name!
-6. *Note:* Your book is **not consumed** so you can reuse it whenever you want!
+1. **O Molde:** Craft blank decorative heads (8 Leather surrounding 1 Carved Pumpkin).
+2. **O Manual:** Open a **Book and Quill** (or signed book):
+   - **Page 1:** Paste the Base64 **Value** copied from [minecraft-heads.com](https://minecraft-heads.com/) (starts with `eyJ0...`).
+   - **Page 2 (Optional):** Type the display name for the head (e.g. `Burn Pot`, `Poplar Log`).
+3. **A Bancada:** Place the book onto a **Lectern** (Atril).
+4. **A Escultura:** Hold the blank head in your hand and **right-click the Lectern** (as if consulting the manual!).
+5. **A Mágica:** Stonecutting sounds and librarian work effects play, and the blank head in your hand instantly becomes the custom head with its genuine texture and golden name! The book remains safely on the lectern so you can sculpt as many copies as you want!
+*(Tip: You can also hold the head + book in your hands or drop them together on the ground if sculpting on the go!)*
+
 
 #### 🎁 Built-in Decorative Block Heads & Presets:
 Mojang provides official decorative mini-block heads through Marc's Head Format (MHF) accounts, plus built-in quick presets:
@@ -98,7 +97,7 @@ Mojang provides official decorative mini-block heads through Marc's Head Format 
 | **Blocks & Food** | `MHF_Chest`, `MHF_Cake`, `MHF_TNT`, `MHF_Cactus`, `MHF_Melon`, `MHF_Pumpkin`, `MHF_OakLog` |
 | **Monsters & Animals** | `MHF_Blaze`, `MHF_Enderman`, `MHF_Spider`, `MHF_Cow`, `MHF_Pig`, `MHF_Sheep`, `MHF_Chicken` |
 | **Direction Arrows** | `MHF_ArrowUp`, `MHF_ArrowDown`, `MHF_ArrowLeft`, `MHF_ArrowRight` |
-| **Built-in Presets** | `Giant Honey Dipper` (`129904`), `Burn Pot` (`129856`), `Poplar Log` (`129843`) |
+
 
 
 ---

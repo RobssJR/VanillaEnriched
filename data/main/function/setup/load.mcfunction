@@ -20,6 +20,8 @@ scoreboard players set .rainbow_idx vplus_math 0
 # Setup safe container block for item modification (safe, chunkloaded, at y=319)
 execute in minecraft:overworld run forceload add 0 0
 execute in minecraft:overworld run setblock 0 319 0 minecraft:barrel keep
+execute in minecraft:overworld run item replace block 0 319 0 container.0 with minecraft:air
+execute in minecraft:overworld run item replace block 0 319 0 container.1 with minecraft:air
 
 # Region System Initialization (Scoreboards & Scheduled Loops)
 scoreboard objectives add vp_player_id dummy

@@ -1,7 +1,33 @@
 {
   "criteria": {
-    "open_lectern": {
+    "any_use": {
       "trigger": "minecraft:any_block_use",
+      "conditions": {
+        "location": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "minecraft:lectern"
+            }
+          }
+        }
+      }
+    },
+    "item_use": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "minecraft:lectern"
+            }
+          }
+        }
+      }
+    },
+    "default_use": {
+      "trigger": "minecraft:default_block_use",
       "conditions": {
         "location": {
           "type": "minecraft:location_check",
@@ -14,6 +40,9 @@
       }
     }
   },
+  "requirements": [
+    [ "any_use", "item_use", "default_use" ]
+  ],
   "rewards": {
     "function": "main:item/stat_book/lectern_open"
   }

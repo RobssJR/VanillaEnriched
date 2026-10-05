@@ -1,133 +1,90 @@
-# 1. Reset temporary storage
+# 1. Reset storage
 data remove storage main:custom_head book_page
 data remove storage main:custom_head head_name
-data remove storage main:custom_head book_title
-data remove storage main:custom_head uuid
 
-# 2. Extract Base64 from book page 1 (check offhand first, then mainhand)
-# Offhand written_book
-data modify storage main:custom_head book_page set from entity @s weapon.offhand.components."minecraft:written_book_content".pages[0].raw
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.offhand.components."minecraft:written_book_content".pages[0].text
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.offhand.components."minecraft:written_book_content".pages[0]
+# 2. Ensure container barrel exists
+execute in minecraft:overworld unless block 0 319 0 minecraft:barrel run setblock 0 319 0 minecraft:barrel keep
+execute in minecraft:overworld run item replace block 0 319 0 container.0 with minecraft:air
+execute in minecraft:overworld run item replace block 0 319 0 container.1 with minecraft:air
 
-# Offhand writable_book
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.offhand.components."minecraft:writable_book_content".pages[0].raw
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.offhand.components."minecraft:writable_book_content".pages[0]
+# 3. Transfer book to barrel container.1 to safely read components
+scoreboard players set #book_hand vplus_math 0
+execute if items entity @s weapon.offhand written_book in minecraft:overworld run item replace block 0 319 0 container.1 from entity @s weapon.offhand
+execute if items entity @s weapon.offhand written_book run scoreboard players set #book_hand vplus_math 2
+execute if items entity @s weapon.offhand writable_book in minecraft:overworld run item replace block 0 319 0 container.1 from entity @s weapon.offhand
+execute if items entity @s weapon.offhand writable_book run scoreboard players set #book_hand vplus_math 2
 
-# Mainhand written_book
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.mainhand.components."minecraft:written_book_content".pages[0].raw
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.mainhand.components."minecraft:written_book_content".pages[0].text
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.mainhand.components."minecraft:written_book_content".pages[0]
+execute if items entity @s weapon.mainhand written_book in minecraft:overworld run item replace block 0 319 0 container.1 from entity @s weapon.mainhand
+execute if items entity @s weapon.mainhand written_book run scoreboard players set #book_hand vplus_math 1
+execute if items entity @s weapon.mainhand writable_book in minecraft:overworld run item replace block 0 319 0 container.1 from entity @s weapon.mainhand
+execute if items entity @s weapon.mainhand writable_book run scoreboard players set #book_hand vplus_math 1
 
-# Mainhand writable_book
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.mainhand.components."minecraft:writable_book_content".pages[0].raw
-execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from entity @s weapon.mainhand.components."minecraft:writable_book_content".pages[0]
+# 4. Extract page 1 (Base64) and page 2 (custom name) from container.1
+data modify storage main:custom_head book_page set from block 0 319 0 Items[{Slot:1b}].components."minecraft:writable_book_content".pages[0].raw
+data modify storage main:custom_head head_name set from block 0 319 0 Items[{Slot:1b}].components."minecraft:writable_book_content".pages[1].raw
 
-# Unpack compound if book_page ended up as a compound
-execute if data storage main:custom_head book_page.raw run data modify storage main:custom_head book_page set from storage main:custom_head book_page.raw
-execute if data storage main:custom_head book_page.text run data modify storage main:custom_head book_page set from storage main:custom_head book_page.text
+execute if data block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0] run function main:mechanic/custom_head/read_written_book_page with block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0]
+execute if data block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[1] run function main:mechanic/custom_head/read_written_book_name with block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[1]
 
-# Abort if no content on page 1
+# Direct fallbacks
+execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0].raw
+execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0].text
+execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0]
+execute unless data storage main:custom_head book_page run data modify storage main:custom_head book_page set from block 0 319 0 Items[{Slot:1b}].components."minecraft:writable_book_content".pages[0]
+
+execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[1].raw
+execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[1].text
+execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from block 0 319 0 Items[{Slot:1b}].components."minecraft:written_book_content".pages[1]
+execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from block 0 319 0 Items[{Slot:1b}].components."minecraft:writable_book_content".pages[1]
+
+# Return book to player
+execute if score #book_hand vplus_math matches 2 in minecraft:overworld run item replace entity @s weapon.offhand from block 0 319 0 container.1
+execute if score #book_hand vplus_math matches 1 in minecraft:overworld run item replace entity @s weapon.mainhand from block 0 319 0 container.1
+execute in minecraft:overworld run item replace block 0 319 0 container.1 with minecraft:air
+
+# 5. Validate Base64
 execute unless data storage main:custom_head book_page run return 0
 execute if data storage main:custom_head {book_page:""} run return 0
 
-# Extract title if written book
-data modify storage main:custom_head book_title set from entity @s weapon.offhand.components."minecraft:written_book_content".title.raw
-execute unless data storage main:custom_head book_title run data modify storage main:custom_head book_title set from entity @s weapon.offhand.components."minecraft:written_book_content".title
-execute unless data storage main:custom_head book_title run data modify storage main:custom_head book_title set from entity @s weapon.mainhand.components."minecraft:written_book_content".title.raw
-execute unless data storage main:custom_head book_title run data modify storage main:custom_head book_title set from entity @s weapon.mainhand.components."minecraft:written_book_content".title
-execute if data storage main:custom_head book_title.raw run data modify storage main:custom_head book_title set from storage main:custom_head book_title.raw
+# Clean leading quote on Base64
+execute store success score #q vplus_math run data modify storage main:custom_head tq set string storage main:custom_head book_page 0 1
+execute if data storage main:custom_head {tq:"\""} run data modify storage main:custom_head book_page set string storage main:custom_head book_page 1
 
-# Check prefix of page 1
-execute store success score #isBase64 vplus_math run data modify storage main:custom_head test_ey set string storage main:custom_head book_page 0 2
+# Clean leading quote on custom name
+execute store success score #nq vplus_math run data modify storage main:custom_head tnq set string storage main:custom_head head_name 0 1
+execute if data storage main:custom_head {tnq:"\""} run data modify storage main:custom_head head_name set string storage main:custom_head head_name 1
 
-# Validate that book is intended for custom head (starts with "ey" or has valid head title)
-scoreboard players set #validBook vplus_math 0
-execute if data storage main:custom_head {test_ey:"ey"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"CustomHead"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"customhead"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"Head"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"head"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"Custom Head"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"custom head"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"Cabeca"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"cabeca"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"Textura"} run scoreboard players set #validBook vplus_math 1
-execute if data storage main:custom_head {book_title:"textura"} run scoreboard players set #validBook vplus_math 1
-execute if score #validBook vplus_math matches 0 run return 0
+# 6. Transfer player_head to barrel container.0
+execute if items entity @s weapon.mainhand player_head in minecraft:overworld run item replace block 0 319 0 container.0 from entity @s weapon.mainhand
+execute unless items entity @s weapon.mainhand player_head in minecraft:overworld run item replace block 0 319 0 container.0 from entity @s weapon.offhand
 
-# Clean surrounding quotes on Base64
-execute store success score #hasQuote vplus_math run data modify storage main:custom_head test_quote set string storage main:custom_head book_page 0 1
-execute if data storage main:custom_head {test_quote:"\""} run data modify storage main:custom_head book_page set string storage main:custom_head book_page 1 -1
-execute store success score #hasQuoteEnd vplus_math run data modify storage main:custom_head test_quote_end set string storage main:custom_head book_page -1 1
-execute if data storage main:custom_head {test_quote_end:"\""} run data modify storage main:custom_head book_page set string storage main:custom_head book_page 0 -1
+# 7. Apply texture profile (no invalid id field)
+execute in minecraft:overworld run data modify block 0 319 0 Items[{Slot:0b}].components."minecraft:profile" set value {properties:[{name:"textures",value:""}]}
+execute in minecraft:overworld run data modify block 0 319 0 Items[{Slot:0b}].components."minecraft:profile".properties[0].value set from storage main:custom_head book_page
 
-# 3. Extract custom name from page 2 (optional)
-# Offhand written_book
-data modify storage main:custom_head head_name set from entity @s weapon.offhand.components."minecraft:written_book_content".pages[1].raw
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.offhand.components."minecraft:written_book_content".pages[1].text
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.offhand.components."minecraft:written_book_content".pages[1]
+# Verify texture was set
+execute in minecraft:overworld unless data block 0 319 0 Items[{Slot:0b}].components."minecraft:profile".properties[0].value run function main:mechanic/custom_head/sculpt_cancel
+execute in minecraft:overworld unless data block 0 319 0 Items[{Slot:0b}].components."minecraft:profile".properties[0].value run return 0
+execute in minecraft:overworld if data block 0 319 0 Items[{Slot:0b}].components."minecraft:profile"{properties:[{value:""}]} run function main:mechanic/custom_head/sculpt_cancel
+execute in minecraft:overworld if data block 0 319 0 Items[{Slot:0b}].components."minecraft:profile"{properties:[{value:""}]} run return 0
 
-# Offhand writable_book
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.offhand.components."minecraft:writable_book_content".pages[1].raw
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.offhand.components."minecraft:writable_book_content".pages[1]
+# 8. Apply custom name
+execute in minecraft:overworld run data modify block 0 319 0 Items[{Slot:0b}].components."minecraft:custom_name" set value {text:"Custom Head",color:"gold",italic:false}
+execute if data storage main:custom_head head_name unless data storage main:custom_head {head_name:""} in minecraft:overworld run data modify block 0 319 0 Items[{Slot:0b}].components."minecraft:custom_name".text set from storage main:custom_head head_name
 
-# Mainhand written_book
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.mainhand.components."minecraft:written_book_content".pages[1].raw
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.mainhand.components."minecraft:written_book_content".pages[1].text
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.mainhand.components."minecraft:written_book_content".pages[1]
+# 9. Clean old flags and mark head_applied
+execute in minecraft:overworld run data remove block 0 319 0 Items[{Slot:0b}].components."minecraft:lore"
+execute in minecraft:overworld run data remove block 0 319 0 Items[{Slot:0b}].components."minecraft:custom_data".can_transform
+execute in minecraft:overworld run data remove block 0 319 0 Items[{Slot:0b}].components."minecraft:custom_data".decorative_head
+execute in minecraft:overworld run data modify block 0 319 0 Items[{Slot:0b}].components."minecraft:custom_data".head_applied set value 1b
 
-# Mainhand writable_book
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.mainhand.components."minecraft:writable_book_content".pages[1].raw
-execute unless data storage main:custom_head head_name run data modify storage main:custom_head head_name set from entity @s weapon.mainhand.components."minecraft:writable_book_content".pages[1]
-
-# Unpack compound if head_name ended up as a compound
-execute if data storage main:custom_head head_name.raw run data modify storage main:custom_head head_name set from storage main:custom_head head_name.raw
-execute if data storage main:custom_head head_name.text run data modify storage main:custom_head head_name set from storage main:custom_head head_name.text
-
-# Clean quotes on custom name
-execute store success score #hasNameQ vplus_math run data modify storage main:custom_head test_nq set string storage main:custom_head head_name 0 1
-execute if data storage main:custom_head {test_nq:"\""} run data modify storage main:custom_head head_name set string storage main:custom_head head_name 1 -1
-execute store success score #hasNameQE vplus_math run data modify storage main:custom_head test_nqe set string storage main:custom_head head_name -1 1
-execute if data storage main:custom_head {test_nqe:"\""} run data modify storage main:custom_head head_name set string storage main:custom_head head_name 0 -1
-
-# 4. Transfer Decorative Player Head to safe barrel in overworld
-execute in minecraft:overworld unless block 0 319 0 minecraft:barrel run setblock 0 319 0 minecraft:barrel keep
-
-# Determine whether head is in mainhand or offhand
-execute if items entity @s weapon.mainhand player_head[custom_data~{can_transform:"1b"}] in minecraft:overworld run item replace block 0 319 0 container.0 from entity @s weapon.mainhand
-execute unless items entity @s weapon.mainhand player_head[custom_data~{can_transform:"1b"}] in minecraft:overworld run item replace block 0 319 0 container.0 from entity @s weapon.offhand
-
-# Generate unique UUID for client texture caching
-execute store result storage main:custom_head uuid[0] int 1 run random value 1..2147483647
-execute store result storage main:custom_head uuid[1] int 1 run random value 1..2147483647
-execute store result storage main:custom_head uuid[2] int 1 run random value 1..2147483647
-execute store result storage main:custom_head uuid[3] int 1 run random value 1..2147483647
-
-# 5. Apply profile component (with UUID array id and textures value)
-data modify block 0 319 0 Items[0].components."minecraft:profile" set value {properties:[{name:"textures",value:""}]}
-data modify block 0 319 0 Items[0].components."minecraft:profile".id set from storage main:custom_head uuid
-data modify block 0 319 0 Items[0].components."minecraft:profile".properties[0].value set from storage main:custom_head book_page
-
-# 6. Apply custom name if provided on page 2, otherwise default to "Custom Head"
-execute if data storage main:custom_head head_name unless data storage main:custom_head {head_name:""} run function main:mechanic/custom_head/set_name_macro with storage main:custom_head
-execute unless data storage main:custom_head head_name run data modify block 0 319 0 Items[0].components."minecraft:custom_name" set value '{"text":"Custom Head","color":"gold","italic":false}'
-execute if data storage main:custom_head {head_name:""} run data modify block 0 319 0 Items[0].components."minecraft:custom_name" set value '{"text":"Custom Head","color":"gold","italic":false}'
-
-# 7. Remove transformation and crafting lore flags
-data remove block 0 319 0 Items[0].components."minecraft:custom_data".can_transform
-data remove block 0 319 0 Items[0].components."minecraft:custom_data".decorative_head
-data remove block 0 319 0 Items[0].components."minecraft:lore"
-
-# 8. Transfer transformed head back to player
-execute if items entity @s weapon.mainhand player_head[custom_data~{can_transform:"1b"}] in minecraft:overworld run item replace entity @s weapon.mainhand from block 0 319 0 container.0
-execute if items entity @s weapon.offhand player_head[custom_data~{can_transform:"1b"}] in minecraft:overworld run item replace entity @s weapon.offhand from block 0 319 0 container.0
-
-# Clear barrel slot
+# 10. Transfer transformed head back to player
+execute if items entity @s weapon.mainhand player_head in minecraft:overworld run item replace entity @s weapon.mainhand from block 0 319 0 container.0
+execute unless items entity @s weapon.mainhand player_head in minecraft:overworld run item replace entity @s weapon.offhand from block 0 319 0 container.0
 execute in minecraft:overworld run item replace block 0 319 0 container.0 with minecraft:air
 
-# 9. Audiovisual feedback
-playsound minecraft:block.enchantment_table.use player @s ~ ~ ~ 1 1.2
-playsound minecraft:entity.player.levelup player @s ~ ~ ~ 0.5 1.5
+# 11. Audiovisual feedback
+playsound minecraft:ui.stonecutter.take_result player @s ~ ~ ~ 1 1
+playsound minecraft:entity.villager.work_librarian player @s ~ ~ ~ 1 1
 particle minecraft:happy_villager ~ ~1 ~ 0.4 0.4 0.4 1 15 normal
 title @s actionbar [{"text":"[Vanilla Enriched] ","color":"gold","bold":true},{"text":"Custom Head Created!","color":"green"}]
