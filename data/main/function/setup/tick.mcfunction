@@ -19,15 +19,12 @@ execute if score .tick_20t vplus_math matches 0 run function main:item/clock/wal
 execute unless score .minute vplus_math = .last_minute vplus_math run function main:item/clock/wallclock_update
 scoreboard players operation .last_minute vplus_math = .minute vplus_math
 
-# 4. Player Interactions (Sneaking & Anvils)
+# 4. Player Interactions (Sneaking)
 execute as @a[scores={vplus_sneak=1..}] run function main:mechanic/player/sneak
-execute as @a[scores={vplus_anvil=1..}] run function main:mechanic/anvil_cost/on_interact_anvil
 
-# 5. Colored Names & Equipment Repair Cost (Throttled every 4 ticks for performance)
+# 5. Colored Names (Anvil Color System - Throttled every 4 ticks for performance)
 scoreboard players add .color_timer vplus_math 1
 execute if score .color_timer vplus_math matches 4.. run scoreboard players set .color_timer vplus_math 0
-execute if score .color_timer vplus_math matches 0 as @a run item modify entity @s weapon.mainhand main:reset_repair_cost
-execute if score .color_timer vplus_math matches 0 as @a run item modify entity @s weapon.offhand main:reset_repair_cost
 execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.mainhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_main
 execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.offhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_off
 execute as @e[type=item,tag=!color_checked] run function main:mechanic/colored_names/check_item
@@ -37,7 +34,6 @@ execute as @a run function main:item/compass/check_compass_lore
 
 # 7. Statistic Books & Lecterns (Periodic maintenance - Every 20 ticks / 1 second)
 execute if score .tick_20t vplus_math matches 0 run function main:item/stat_book/tick
-execute if score .tick_20t vplus_math matches 0 as @a run function main:mechanic/anvil_cost/reset_player_inventory
 
 # 8. Instant Lectern Entity Cleanup (Runs every single tick)
 execute as @e[tag=enriched.lectern] at @s align xyz unless block ~ ~ ~ minecraft:lectern run kill @s
