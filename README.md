@@ -21,6 +21,7 @@
   - [5. 🎨 Anvil Colors & Chroma Text Formatting](#5--anvil-colors--chroma-text-formatting)
   - [6. 🚩 Banner Territories & Area Discovery](#6--banner-territories--area-discovery)
   - [7. 📚 Multipage Statistics Books & Lecterns](#7--multipage-statistics-books--lecterns)
+  - [8. 🌾 Villager Temptation ("O Trigo dos Aldeões")](#8--villager-temptation-o-trigo-dos-aldeões)
 - [❓ Frequently Asked Questions (FAQ) & Troubleshooting](#-frequently-asked-questions-faq--troubleshooting)
 - [🛠️ Architecture & File Structure](#️-architecture--file-structure)
 - [📄 License](#-license)
@@ -246,6 +247,21 @@ Transform standard lecterns into real-time, interactive survival leaderboard pod
 
 ---
 
+### 8. 🌾 Villager Temptation ("O Trigo dos Aldeões")
+
+Transport and guide villagers effortlessly across your world without complicated boats, minecarts, or leads — simulating the vanilla animal food temptation mechanic!
+
+#### 💎 How it Works:
+1. Hold an **Emerald Block** (`minecraft:emerald_block`) in your **mainhand** or **offhand**.
+2. Any adult villager within a **12-block radius** immediately notices the emerald block:
+   - Plays an excited villager sound and produces green emerald particles (`happy_villager`).
+   - Fixes their gaze on you and begins walking towards you smoothly.
+3. **Safe Distance:** When the villager reaches within **~2.2 blocks**, they stop walking and admire the block, preventing them from pushing or suffocating you.
+4. **Terrain Navigation:** The villager automatically steps up 1-block ledges, stairs, and slabs while following.
+5. **Releasing:** If you switch to another item or walk further than 12 blocks away, the villager loses interest (with a disappointed grunt sound) and instantly returns to their standard vanilla AI and schedule (work, rest, gossip).
+
+---
+
 ## ❓ Frequently Asked Questions (FAQ) & Troubleshooting
 
 <details>
@@ -287,8 +303,7 @@ VanillaEnriched/
 ├── pack.mcmeta                         # Pack metadata (pack_format: 48 / 26.3)
 ├── README.md                           # Documentation & Tutorial
 └── data/
-    ├── minecraft/                      # Vanilla tags & recipe overrides
-    │   ├── recipe/player_head.json
+    ├── minecraft/                      # Vanilla tags (load and tick hooks)
     │   └── tags/function/              # Load and Tick hooks
     └── main/
         ├── advancement/                # Event triggers (lectern, frames, banners)
@@ -303,6 +318,7 @@ VanillaEnriched/
             ├── mechanic/custom_head/   # Decorative player head transformation
             ├── mechanic/invisible_frame# Dynamic invisible frame logic
             ├── mechanic/region/        # Territory discovery system
+            ├── mechanic/villager_follow# Villager emerald block temptation system
             └── setup/                  # Global init (load) and main tick loop (tick)
 ```
 

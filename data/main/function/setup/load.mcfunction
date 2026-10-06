@@ -32,8 +32,14 @@ schedule function main:mechanic/region/clean_loop 100t replace
 function main:item/stat_book/load
 
 # Custom Head Recipes
+recipe take @a minecraft:player_head
 recipe give @a main:decorative_player_head
-recipe give @a minecraft:player_head
+
+# Villager Follow Guide System Initialization
+team add main.guide
+team modify main.guide collisionRule never
+execute as @e[type=wandering_trader,tag=main.guide] run kill @s
+tag @e[type=villager,tag=main.tempted] remove main.tempted
 
 # Notify players of successful load
 tellraw @a {"text":"[Vanilla Enriched] Systems Successfully Loaded!","color":"green"}
