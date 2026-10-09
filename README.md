@@ -23,8 +23,11 @@
   - [7. 📚 Multipage Statistics Books & Lecterns](#7--multipage-statistics-books--lecterns)
   - [8. 🌾 Villager Temptation ("O Trigo dos Aldeões")](#8--villager-temptation-o-trigo-dos-aldeões)
   - [9. 🐾 Pet Love ("Carinho nos Pets")](#9--pet-love-carinho-nos-pets)
-  - [10. 🍻 Tavern Toast ("O Brinde na Taverna")](#10--tavern-toast-o-brinde-na-taverna)
-  - [11. 🪙 Coin Flip ("Cara ou Coroa")](#11--coin-flip-cara-ou-coroa)
+  - [10. 🪙 Coin Flip ("Cara ou Coroa")](#10--coin-flip-cara-ou-coroa)
+  - [11. 🧽 Cubo de Enxofre: Aspirador de Oceano ("Living Ocean Vacuum")](#11--cubo-de-enxofre-aspirador-de-oceano-living-ocean-vacuum)
+  - [12. 🌫️ Cubo de Enxofre: A Máquina de Névoa ("Mist Machine")](#12--cubo-de-enxofre-a-máquina-de-névoa-mist-machine)
+  - [13. 🔮 Cubo de Enxofre: Ressonância & Botânica (Efeitos Sutis)](#13--cubo-de-enxofre-ressonância--botânica-efeitos-sutis)
+  - [14. 🌵 Cubo de Enxofre: O Cubo Cacto ("Cactus Cube")](#14--cubo-de-enxofre-o-cubo-cacto-cactus-cube)
 - [❓ Frequently Asked Questions (FAQ) & Troubleshooting](#-frequently-asked-questions-faq--troubleshooting)
 - [🛠️ Architecture & File Structure](#️-architecture--file-structure)
 - [📄 License](#-license)
@@ -280,22 +283,7 @@ Give affection to your canine and feline companions in survival without opening 
 
 ---
 
-### 10. 🍻 Tavern Toast ("O Brinde na Taverna")
-
-Celebrate your adventures and toast with fellow players around the campfire or inside a cozy tavern!
-
-#### 🍯 How it Works:
-1. Hold a **Honey Bottle** (`minecraft:honey_bottle`) in your **mainhand** or **offhand**.
-2. Stand close to another player within **2.5 blocks** who is also holding a honey bottle.
-3. **Crouch (Shift)** together:
-   - **Clink!** A crisp glass clinking sound plays (`block.glass.hit` pitch 1.2).
-   - **Burp!** A satisfying tavern post-drink burp echoes (`entity.player.burp` pitch 0.8).
-   - **Celebration:** Sparkling green stars (`minecraft:happy_villager`) fly between both players!
-4. **Anti-Spam:** A built-in 2-second cooldown (`40 ticks`) prevents sound spam while chatting and drinking.
-
----
-
-### 11. 🪙 Coin Flip ("Cara ou Coroa")
+### 10. 🪙 Coin Flip ("Cara ou Coroa")
 
 Settle disputes, bet on trades, or make decisions with a fun coin toss using a gold nugget!
 
@@ -310,7 +298,7 @@ Settle disputes, bet on trades, or make decisions with a fun coin toss using a g
 
 ---
 
-### 12. 🧽 Cubo de Enxofre: Aspirador de Oceano ("Living Ocean Vacuum")
+### 11. 🧽 Cubo de Enxofre: Aspirador de Oceano ("Living Ocean Vacuum")
 
 Drene lagos, rios e monumentos oceânicos inteiros de forma dinâmica e divertida usando o novo mob **Cubo de Enxofre** (*Sulfur Cube*) introduzido no Minecraft 26.3! Chega de ter que secar dezenas de esponjas na fornalha ou matar incontáveis Elder Guardians.
 
@@ -333,6 +321,53 @@ Drene lagos, rios e monumentos oceânicos inteiros de forma dinâmica e divertid
 5. **Transporte e Resgate:**
    - Cubos de Enxofre podem ser transportados num balde (`sulfur_cube_bucket`) ou conduzidos por Laço (*Lead*).
    - Para recuperar os itens (esponja, esponja molhada ou magma), basta tosquiar (*Shears*) o Cubo!
+
+---
+
+### 12. 🌫️ Cubo de Enxofre: A Máquina de Névoa ("Mist Machine")
+
+Transforme o Cubo de Enxofre em um sutil emissor de névoa fria e geada utilizando **Gelo Compactado** (`minecraft:packed_ice`) ou **Gelo Azul** (`minecraft:blue_ice`)!
+
+#### ❄️ Como Funciona:
+1. **Alimentando o Cubo:**
+   - Jogue um bloco de Gelo Compactado ou Gelo Azul no chão para o Cubo de Enxofre engolir (arquétipo nativo `fast_sliding`).
+2. **Névoa Sutil & Geada:**
+   - Emite pequenas e suaves partículas de névoa e cristais de gelo (`cloud`, `snowflake`) com som discreto de neve a cada poucos segundos.
+   - Ideal para decoração de ambientes frios, adegas ou cemitérios de forma não intrusiva.
+3. **Passos de Geada Vivos (*Frost Walker*):**
+   - Ao deslizar sobre a água, ele congela a água diretamente abaixo dele em **Gelo Fosco** (`frosted_ice`), permitindo criar caminhos sobre a água.
+4. **Extintor Natural:**
+   - Apaga chamas e resfria lava superficial ao passar por cima.
+
+---
+
+### 13. 🔮 Cubo de Enxofre: Ressonância & Botânica (Efeitos Sutis)
+
+Variantes ambientais delicadas e discretas para enriquecer a atmosfera da sua base:
+
+#### 🔮 Ressonância de Ametista (`amethyst_block`):
+- O Cubo de Enxofre que engole um **Bloco de Ametista** emite tênues centelhas roxas cintilantes (`witch`, `portal`).
+- A cada 3 segundos, toca um sino suave e discreto de ametista (`block.amethyst_block.chime` em volume baixo).
+
+#### 🌿 Filtro Botânico (`moss_block`):
+- O Cubo de Enxofre que engole um **Bloco de Musgo** solta delicados esporos verdes e pétalas florais ocasionais (`spore_blossom_air`, `cherry_leaves`).
+- Emite um som muito suave de roçar de folhas (`block.azalea_leaves.step`).
+
+---
+
+### 14. 🌵 Cubo de Enxofre: O Cubo Cacto ("Cactus Cube")
+
+Transforme o Cubo de Enxofre em um triturador móvel de lixo e espinho vivo utilizando um **Cacto** (`minecraft:cactus`)!
+
+#### 🌵 Como Funciona:
+1. **Alimentando o Cubo:**
+   - Jogue um **Cacto** (`minecraft:cactus`) no chão para o Cubo de Enxofre engolir.
+2. **Triturador / Incinerador de Itens:**
+   - Qualquer item dropado no chão que encostar no Cubo Cacto (raio de ~1 bloco) é **destruído e desintegrado instantaneamente** com som de quebra e partículas de espinhos de cacto (`block.cactus.destroy`).
+   - Perfeito como lixeira viva ou limpador de itens em excesso em minerações e fazendas!
+3. **Dano de Contato Espinhoso:**
+   - Jogadores, monstros e animais que encostarem no Cubo Cacto recebem **dano autêntico de cacto** (`minecraft:cactus`) com som de espetada e animação de dano.
+   - Ideal para criar armadilhas vivas móveis contra zumbis e invasores!
 
 ---
 
@@ -392,8 +427,9 @@ VanillaEnriched/
             ├── mechanic/custom_head/   # Decorative player head transformation
             ├── mechanic/invisible_frame# Dynamic invisible frame logic
             ├── mechanic/region/        # Territory discovery system
-            ├── mechanic/rp/            # Roleplay mechanics (petting, tavern toast, coin flip)
+            ├── mechanic/rp/            # Roleplay mechanics (petting, coin flip)
             ├── mechanic/sulfur_sponge/ # Sulfur Cube Ocean Vacuum (drain, follow, tick)
+            ├── mechanic/sulfur_variants# Sulfur Cube Variants (mist machine, amethyst, moss)
             ├── mechanic/villager_follow# Villager emerald block temptation system
             └── setup/                  # Global init (load) and main tick loop (tick)
 ```

@@ -48,14 +48,14 @@ execute if score .color_timer vplus_math matches 0 as @e[type=item] if items ent
 # 11. Villager Follow ("O Trigo dos Aldeões" - Emerald Block Temptation)
 function main:mechanic/villager_follow/tick
 
-# 12. Roleplay: Tavern Toast ("O Brinde na Taverna")
-function main:mechanic/rp/toast_tick
-
-# 13. Roleplay: Coin Flip ("Cara ou Coroa")
+# 12. Roleplay: Coin Flip ("Cara ou Coroa")
 function main:mechanic/rp/coin_tick
 
-# 14. Sulfur Cube Ocean Vacuum ("Cubo de Enxofre: Aspirador de Oceano")
+# 13. Sulfur Cube Ocean Vacuum ("Cubo de Enxofre: Aspirador de Oceano")
 function main:mechanic/sulfur_sponge/tick
+
+# 14. Sulfur Cube Variants (Máquina de Névoa, Ressonância de Ametista e Filtro Botânico)
+function main:mechanic/sulfur_variants/tick
 
 # Reset roleplay sneak score for all players at the end of the tick loop
 scoreboard players set @a vp_sneak 0
