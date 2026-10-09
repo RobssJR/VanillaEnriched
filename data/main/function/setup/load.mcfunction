@@ -45,5 +45,9 @@ team modify main.guide collisionRule never
 execute as @e[type=wandering_trader,tag=main.guide] run kill @s
 tag @e[type=villager,tag=main.tempted] remove main.tempted
 
+# Sponge Thermal Drying Initialization
+advancement revoke @a only main:mechanic/sponge_dry/place_wet_sponge
+advancement revoke @a only main:mechanic/sponge_dry/place_magma_block
+
 # Notify players of successful load
 tellraw @a {"text":"[Vanilla Enriched] Systems Successfully Loaded!","color":"green"}

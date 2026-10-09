@@ -28,6 +28,7 @@
   - [12. 🌫️ Cubo de Enxofre: A Máquina de Névoa ("Mist Machine")](#12--cubo-de-enxofre-a-máquina-de-névoa-mist-machine)
   - [13. 🔮 Cubo de Enxofre: Ressonância & Botânica (Efeitos Sutis)](#13--cubo-de-enxofre-ressonância--botânica-efeitos-sutis)
   - [14. 🌵 Cubo de Enxofre: O Cubo Cacto ("Cactus Cube")](#14--cubo-de-enxofre-o-cubo-cacto-cactus-cube)
+  - [15. 🔥 Secagem Térmica de Esponjas ("Thermal Sponge Drying")](#15--secagem-térmica-de-esponjas-thermal-sponge-drying)
 - [❓ Frequently Asked Questions (FAQ) & Troubleshooting](#-frequently-asked-questions-faq--troubleshooting)
 - [🛠️ Architecture & File Structure](#️-architecture--file-structure)
 - [📄 License](#-license)
@@ -368,6 +369,24 @@ Transforme o Cubo de Enxofre em um triturador móvel de lixo e espinho vivo util
 3. **Dano de Contato Espinhoso:**
    - Jogadores, monstros e animais que encostarem no Cubo Cacto recebem **dano autêntico de cacto** (`minecraft:cactus`) com som de espetada e animação de dano.
    - Ideal para criar armadilhas vivas móveis contra zumbis e invasores!
+
+---
+
+### 15. 🔥 Secagem Térmica de Esponjas ("Thermal Sponge Drying")
+
+Seque esponjas molhadas instantaneamente no Overworld sem precisar usar fornalhas ou viajar até o Nether! Ao entrar em contato térmico com um **Bloco de Magma** (`minecraft:magma_block`), a água contida na esponja é vaporizada imediatamente.
+
+#### ♨️ Como Funciona:
+1. **Colocando a Esponja Molhada:**
+   - Ao posicionar uma **Esponja Molhada** (`minecraft:wet_sponge`) adjacente a qualquer face ou vértice de um **Bloco de Magma** (em cima, embaixo, aos lados ou diagonal), o calor extremo faz a esponja evaporar instantaneamente.
+   - O bloco se transforma de imediato em uma **Esponja Seca** (`minecraft:sponge`).
+2. **Colocando o Bloco de Magma:**
+   - Se você posicionar um **Bloco de Magma** ao lado de esponjas molhadas já colocadas, todas as esponjas molhadas ao redor no raio de contato secam simultaneamente!
+3. **Efeitos Visuais e Sonoros Imersivos:**
+   - Uma densa nuvem de vapor (`cloud`), fumaça preta (`smoke`), pequenas chamas (`flame`) e estalos de água fervente (`bubble_pop`) irrompem no momento da secagem.
+   - Um clássico som nítido de chiado térmico (`block.fire.extinguish` e `block.lava.extinguish`) ecoa no ambiente.
+4. **Estações de Secagem Rápida:**
+   - Crie pisos ou bancadas de blocos de magma para secar dezenas de esponjas em segundos apenas colocando e quebrando-as, acelerando imensamente a drenagem de oceanos e templos!
 
 ---
 
