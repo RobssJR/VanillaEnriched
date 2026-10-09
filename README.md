@@ -22,6 +22,9 @@
   - [6. 🚩 Banner Territories & Area Discovery](#6--banner-territories--area-discovery)
   - [7. 📚 Multipage Statistics Books & Lecterns](#7--multipage-statistics-books--lecterns)
   - [8. 🌾 Villager Temptation ("O Trigo dos Aldeões")](#8--villager-temptation-o-trigo-dos-aldeões)
+  - [9. 🐾 Pet Love ("Carinho nos Pets")](#9--pet-love-carinho-nos-pets)
+  - [10. 🍻 Tavern Toast ("O Brinde na Taverna")](#10--tavern-toast-o-brinde-na-taverna)
+  - [11. 🪙 Coin Flip ("Cara ou Coroa")](#11--coin-flip-cara-ou-coroa)
 - [❓ Frequently Asked Questions (FAQ) & Troubleshooting](#-frequently-asked-questions-faq--troubleshooting)
 - [🛠️ Architecture & File Structure](#️-architecture--file-structure)
 - [📄 License](#-license)
@@ -262,6 +265,77 @@ Transport and guide villagers effortlessly across your world without complicated
 
 ---
 
+### 9. 🐾 Pet Love ("Carinho nos Pets")
+
+Give affection to your canine and feline companions in survival without opening menus or needing commands!
+
+#### 💖 How it Works:
+1. Approach any **Wolf** or **Cat** with an **empty main hand** (`weapon.mainhand`).
+2. **Right-click** on the animal to pet them.
+3. **Immersive Feedback:**
+   - **Wolves:** Play the satisfied panting sound (`entity.wolf.pant`).
+   - **Cats:** Play a cozy purring sound (`entity.cat.purr`).
+   - Both display animated **Heart particles** (`minecraft:heart`) above their head!
+4. **Zero Impact on Survival:** Holding food, bones, or weapons will perform normal taming/breeding/sitting actions instead of triggering the petting sound.
+
+---
+
+### 10. 🍻 Tavern Toast ("O Brinde na Taverna")
+
+Celebrate your adventures and toast with fellow players around the campfire or inside a cozy tavern!
+
+#### 🍯 How it Works:
+1. Hold a **Honey Bottle** (`minecraft:honey_bottle`) in your **mainhand** or **offhand**.
+2. Stand close to another player within **2.5 blocks** who is also holding a honey bottle.
+3. **Crouch (Shift)** together:
+   - **Clink!** A crisp glass clinking sound plays (`block.glass.hit` pitch 1.2).
+   - **Burp!** A satisfying tavern post-drink burp echoes (`entity.player.burp` pitch 0.8).
+   - **Celebration:** Sparkling green stars (`minecraft:happy_villager`) fly between both players!
+4. **Anti-Spam:** A built-in 2-second cooldown (`40 ticks`) prevents sound spam while chatting and drinking.
+
+---
+
+### 11. 🪙 Coin Flip ("Cara ou Coroa")
+
+Settle disputes, bet on trades, or make decisions with a fun coin toss using a gold nugget!
+
+#### 💰 How it Works:
+1. Hold a **Gold Nugget** (`minecraft:gold_nugget`).
+2. **Crouch (Shift)** and drop the nugget (`Q` while sneaking).
+3. **The Toss:**
+   - A realistic spinning coin sound echoes (`block.chain.place` pitch 1.8).
+   - The gold nugget is automatically kept safe and returned to your inventory (never lost or duplicated).
+   - An announcement in gold/yellow text is broadcast to all players within 15 blocks:
+     `[Moeda] Player jogou uma moeda e deu CARA!` ou `COROA!`
+
+---
+
+### 12. 🧽 Cubo de Enxofre: Aspirador de Oceano ("Living Ocean Vacuum")
+
+Drene lagos, rios e monumentos oceânicos inteiros de forma dinâmica e divertida usando o novo mob **Cubo de Enxofre** (*Sulfur Cube*) introduzido no Minecraft 26.3! Chega de ter que secar dezenas de esponjas na fornalha ou matar incontáveis Elder Guardians.
+
+#### 🌊 Como Funciona:
+1. **Alimente o Cubo com uma Esponja:**
+   - Jogue uma **Esponja** (`minecraft:sponge`) ou **Esponja Molhada** (`minecraft:wet_sponge`) no chão na frente de um **Cubo de Enxofre**.
+   - O Cubo de Enxofre engolirá o bloco (visível em seu corpo).
+2. **Absorção e Saturação (Ficar Molhado):**
+   - Ao nadar na água, o Cubo de Enxofre com esponja seca **drena ativamente um raio de 5x5x5 a 7x3x7 de água**.
+   - Conforme absorve água (capacidade de ~250 blocos de água), a esponja em seu corpo se encharca e **transforma-se em uma Esponja Molhada** (`wet_sponge`)!
+   - Quando saturado ("molhado"), ele para de absorver água e começa a gotejar água (`dripping_water`).
+3. **Secagem com Cubo de Enxofre de Magma:**
+   - Para secar o Cubo de Enxofre encharcado, basta aproximá-lo (raio de 6 blocos) de um **Cubo de Enxofre de Magma** (um Cubo de Enxofre que engoliu um Bloco de Magma)!
+   - O calor intenso faz a água evaporar em uma nuvem de vapor (`cloud`, `smoke`) com som de chiado (`block.fire.extinguish`).
+   - A esponja em seu corpo **volta instantaneamente a ser uma Esponja Seca** (`sponge`)!
+   - **Dica Pro:** Se você mantiver o Cubo de Enxofre de Magma nadando ao lado do Cubo com Esponja, a secagem é contínua e instantânea!
+4. **Companheiro Teleguiado:**
+   - Segure uma **Esponja**, **Esponja Molhada**, **Slimeball** ou **Bloco de Magma** na mão.
+   - Os Cubos de Enxofre nadarão suavemente em sua direção (entre 2.2 e 12 blocos de distância), permitindo guiá-los pelo oceano como uma equipe viva de drenagem!
+5. **Transporte e Resgate:**
+   - Cubos de Enxofre podem ser transportados num balde (`sulfur_cube_bucket`) ou conduzidos por Laço (*Lead*).
+   - Para recuperar os itens (esponja, esponja molhada ou magma), basta tosquiar (*Shears*) o Cubo!
+
+---
+
 ## ❓ Frequently Asked Questions (FAQ) & Troubleshooting
 
 <details>
@@ -318,6 +392,8 @@ VanillaEnriched/
             ├── mechanic/custom_head/   # Decorative player head transformation
             ├── mechanic/invisible_frame# Dynamic invisible frame logic
             ├── mechanic/region/        # Territory discovery system
+            ├── mechanic/rp/            # Roleplay mechanics (petting, tavern toast, coin flip)
+            ├── mechanic/sulfur_sponge/ # Sulfur Cube Ocean Vacuum (drain, follow, tick)
             ├── mechanic/villager_follow# Villager emerald block temptation system
             └── setup/                  # Global init (load) and main tick loop (tick)
 ```

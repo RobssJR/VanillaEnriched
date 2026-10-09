@@ -47,3 +47,15 @@ execute if score .color_timer vplus_math matches 0 as @a run function main:mecha
 execute if score .color_timer vplus_math matches 0 as @e[type=item] if items entity @s contents player_head[!custom_data~{head_applied:1b}] run function main:mechanic/custom_head/check_dropped
 # 11. Villager Follow ("O Trigo dos Aldeões" - Emerald Block Temptation)
 function main:mechanic/villager_follow/tick
+
+# 12. Roleplay: Tavern Toast ("O Brinde na Taverna")
+function main:mechanic/rp/toast_tick
+
+# 13. Roleplay: Coin Flip ("Cara ou Coroa")
+function main:mechanic/rp/coin_tick
+
+# 14. Sulfur Cube Ocean Vacuum ("Cubo de Enxofre: Aspirador de Oceano")
+function main:mechanic/sulfur_sponge/tick
+
+# Reset roleplay sneak score for all players at the end of the tick loop
+scoreboard players set @a vp_sneak 0

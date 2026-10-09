@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "wolf": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:wolf"
+          }
+        }
+      }
+    },
+    "cat": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:cat"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "wolf",
+      "cat"
+    ]
+  ],
+  "rewards": {
+    "function": "main:mechanic/rp/pet_love"
+  }
+}

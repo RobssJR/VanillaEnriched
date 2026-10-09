@@ -2,6 +2,12 @@
 scoreboard objectives add vplus_math dummy
 scoreboard objectives add vplus_state dummy
 scoreboard objectives add vplus_sneak minecraft.custom:minecraft.sneak_time
+scoreboard objectives add vp_sneak minecraft.custom:minecraft.sneak_time
+scoreboard objectives add vp_toast_cd dummy
+scoreboard players add @a vp_toast_cd 0
+scoreboard objectives add vp_drop_gold minecraft.dropped:minecraft.gold_nugget
+scoreboard objectives add vp_temp dummy
+scoreboard objectives add vp_water_sat dummy
 
 scoreboard players set .paused vplus_state 0
 
