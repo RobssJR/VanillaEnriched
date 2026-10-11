@@ -39,7 +39,3 @@ execute as @e[type=sulfur_cube,tag=vp_wet_sponge_cube] at @s run function main:m
 # 3. Magma Sulfur Cubes: Boiling ambiance when in water
 execute as @e[type=sulfur_cube,tag=vp_magma_cube] at @s run function main:mechanic/sulfur_sponge/magma_tick
 
-# 4. Companion Following: Lead cubes with sponge, wet_sponge, slimeball, or magma block
-execute as @e[type=sulfur_cube,tag=vp_sponge_cube] at @s run function main:mechanic/sulfur_sponge/follow
-execute as @e[type=sulfur_cube,tag=vp_wet_sponge_cube] at @s run function main:mechanic/sulfur_sponge/follow
-execute as @e[type=sulfur_cube,tag=vp_magma_cube] at @s run function main:mechanic/sulfur_sponge/follow

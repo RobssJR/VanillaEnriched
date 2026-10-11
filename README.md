@@ -316,10 +316,7 @@ Drene lagos, rios e monumentos oceânicos inteiros de forma dinâmica e divertid
    - O calor intenso faz a água evaporar em uma nuvem de vapor (`cloud`, `smoke`) com som de chiado (`block.fire.extinguish`).
    - A esponja em seu corpo **volta instantaneamente a ser uma Esponja Seca** (`sponge`)!
    - **Dica Pro:** Se você mantiver o Cubo de Enxofre de Magma nadando ao lado do Cubo com Esponja, a secagem é contínua e instantânea!
-4. **Companheiro Teleguiado:**
-   - Segure uma **Esponja**, **Esponja Molhada**, **Slimeball** ou **Bloco de Magma** na mão.
-   - Os Cubos de Enxofre nadarão suavemente em sua direção (entre 2.2 e 12 blocos de distância), permitindo guiá-los pelo oceano como uma equipe viva de drenagem!
-5. **Transporte e Resgate:**
+4. **Transporte e Resgate:**
    - Cubos de Enxofre podem ser transportados num balde (`sulfur_cube_bucket`) ou conduzidos por Laço (*Lead*).
    - Para recuperar os itens (esponja, esponja molhada ou magma), basta tosquiar (*Shears*) o Cubo!
 
@@ -447,7 +444,7 @@ VanillaEnriched/
             ├── mechanic/invisible_frame# Dynamic invisible frame logic
             ├── mechanic/region/        # Territory discovery system
             ├── mechanic/rp/            # Roleplay mechanics (petting, coin flip)
-            ├── mechanic/sulfur_sponge/ # Sulfur Cube Ocean Vacuum (drain, follow, tick)
+            ├── mechanic/sulfur_sponge/ # Sulfur Cube Ocean Vacuum (drain, dry, soak, tick)
             ├── mechanic/sulfur_variants# Sulfur Cube Variants (mist machine, amethyst, moss)
             ├── mechanic/villager_follow# Villager emerald block temptation system
             └── setup/                  # Global init (load) and main tick loop (tick)
