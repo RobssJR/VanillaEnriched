@@ -6,7 +6,7 @@
 ![Dependencies](https://img.shields.io/badge/Dependencies-None%20(Pure%20Vanilla)-orange)
 ![Pure Survival](https://img.shields.io/badge/Commands%20Required-0%20(Pure%20Survival)-success)
 
-**Vanilla Enriched** is a modular, high-performance survival enhancement datapack. It brings modern Quality of Life (QoL) features, immersive navigation HUDs, customizable decorative player heads, dynamic invisible item frames, holographic wall clocks, territory discovery titles, and automated lectern leaderboards to your world — **100% vanilla, pure survival, with zero commands or mods required!**
+**Vanilla Enriched** is a modular, high-performance survival enhancement datapack. It brings modern Quality of Life (QoL) features, immersive navigation HUDs, customizable decorative player heads, dynamic invisible item frames, holographic wall clocks, territory discovery titles, utility companions, and automated lectern leaderboards to your world — **100% vanilla, pure survival, with zero commands or mods required!**
 
 ---
 
@@ -21,14 +21,10 @@
   - [5. 🎨 Anvil Colors & Chroma Text Formatting](#5--anvil-colors--chroma-text-formatting)
   - [6. 🚩 Banner Territories & Area Discovery](#6--banner-territories--area-discovery)
   - [7. 📚 Multipage Statistics Books & Lecterns](#7--multipage-statistics-books--lecterns)
-  - [8. 🌾 Villager Temptation ("O Trigo dos Aldeões")](#8--villager-temptation-o-trigo-dos-aldeões)
-  - [9. 🐾 Pet Love ("Carinho nos Pets")](#9--pet-love-carinho-nos-pets)
-  - [10. 🪙 Coin Flip ("Cara ou Coroa")](#10--coin-flip-cara-ou-coroa)
-  - [11. 🧽 Cubo de Enxofre: Aspirador de Oceano ("Living Ocean Vacuum")](#11--cubo-de-enxofre-aspirador-de-oceano-living-ocean-vacuum)
-  - [12. 🌫️ Cubo de Enxofre: A Máquina de Névoa ("Mist Machine")](#12--cubo-de-enxofre-a-máquina-de-névoa-mist-machine)
-  - [13. 🔮 Cubo de Enxofre: Ressonância & Botânica (Efeitos Sutis)](#13--cubo-de-enxofre-ressonância--botânica-efeitos-sutis)
-  - [14. 🌵 Cubo de Enxofre: O Cubo Cacto ("Cactus Cube")](#14--cubo-de-enxofre-o-cubo-cacto-cactus-cube)
-  - [15. 🔥 Secagem Térmica de Esponjas ("Thermal Sponge Drying")](#15--secagem-térmica-de-esponjas-thermal-sponge-drying)
+  - [8. 🐾 Petting Companions ("Pet Love")](#8--petting-companions-pet-love)
+  - [9. 🪙 Coin Flip](#9--coin-flip)
+  - [10. 🧊 Sulfur Cube Utility & Archetypes](#10--sulfur-cube-utility--archetypes)
+  - [11. 🔥 Thermal Sponge Drying](#11--thermal-sponge-drying)
 - [❓ Frequently Asked Questions (FAQ) & Troubleshooting](#-frequently-asked-questions-faq--troubleshooting)
 - [🛠️ Architecture & File Structure](#️-architecture--file-structure)
 - [📄 License](#-license)
@@ -43,7 +39,7 @@
    ```text
    %appdata%/.minecraft/saves/<YOUR_WORLD>/datapacks/
    ```
-3. Place the `VanillaPlusCore` folder directly into `datapacks/`.
+3. Place the `VanillaEnriched` folder directly into `datapacks/`.
 4. Enter your world and run `/reload` in the chat.
 5. You will see the green confirmation banner:
    ```text
@@ -62,7 +58,7 @@
 
 ### 1. 👤 Custom Decorative Player Heads
 
-Craft blank decorative skulls in survival and transform them into **any player's skin** or decorative mini-blocks using an anvil!
+Craft blank decorative skulls in survival and transform them into **any player's skin** or decorative mini-blocks using an anvil or lectern!
 
 #### 🛠️ Crafting Recipe (Shaped):
 Place **8x Leather** surrounding **1x Carved Pumpkin** in a Crafting Table:
@@ -84,29 +80,26 @@ Place **8x Leather** surrounding **1x Carved Pumpkin** in a Crafting Table:
 3. Take the head out of the anvil output slot (costs 1 XP level).
 4. **Boom!** The skull instantly transforms into that player's genuine skin!
 
-##### Option B: Sculpting Custom Heads from Manual (Atril / Lectern)
-For custom heads that do **not** have a player nickname (like decorative pots, logs, furniture, food, etc.):
+##### Option B: Sculpting Custom Heads from Manual (Lectern)
+For custom heads that do **not** have a player username (such as decorative pots, logs, furniture, food, mini-blocks, etc.):
 
-1. **O Molde:** Craft blank decorative heads (8 Leather surrounding 1 Carved Pumpkin).
-2. **O Manual:** Open a **Book and Quill** (or signed book):
+1. **The Mold:** Craft blank decorative heads (8 Leather surrounding 1 Carved Pumpkin).
+2. **The Manual:** Open a **Book and Quill** (or signed book):
    - **Page 1:** Paste the Base64 **Value** copied from [minecraft-heads.com](https://minecraft-heads.com/) (starts with `eyJ0...`).
    - **Page 2 (Optional):** Type the display name for the head (e.g. `Burn Pot`, `Poplar Log`).
-3. **A Bancada:** Place the book onto a **Lectern** (Atril).
-4. **A Escultura:** Hold the blank head in your hand and **right-click the Lectern** (as if consulting the manual!).
-5. **A Mágica:** Stonecutting sounds and librarian work effects play, and the blank head in your hand instantly becomes the custom head with its genuine texture and golden name! The book remains safely on the lectern so you can sculpt as many copies as you want!
+3. **The Workstation:** Place the book onto a **Lectern**.
+4. **The Sculpting:** Hold the blank head in your hand and **right-click the Lectern** (as if consulting the guide!).
+5. **The Magic:** Stonecutting sounds and librarian work particles play, and the blank head in your hand instantly transforms into the custom head with its authentic texture and golden name! The book remains safely on the lectern so you can sculpt as many copies as needed.  
 *(Tip: You can also hold the head + book in your hands or drop them together on the ground if sculpting on the go!)*
 
-
 #### 🎁 Built-in Decorative Block Heads & Presets:
-Mojang provides official decorative mini-block heads through Marc's Head Format (MHF) accounts, plus built-in quick presets:
+Mojang provides official decorative mini-block heads through Marc's Head Format (MHF) accounts:
 
 | Category | In-Game Anvil Names / IDs |
 | :--- | :--- |
 | **Blocks & Food** | `MHF_Chest`, `MHF_Cake`, `MHF_TNT`, `MHF_Cactus`, `MHF_Melon`, `MHF_Pumpkin`, `MHF_OakLog` |
 | **Monsters & Animals** | `MHF_Blaze`, `MHF_Enderman`, `MHF_Spider`, `MHF_Cow`, `MHF_Pig`, `MHF_Sheep`, `MHF_Chicken` |
 | **Direction Arrows** | `MHF_ArrowUp`, `MHF_ArrowDown`, `MHF_ArrowLeft`, `MHF_ArrowRight` |
-
-
 
 ---
 
@@ -235,16 +228,16 @@ Transform standard lecterns into real-time, interactive survival leaderboard pod
      - `time_since_death` (Survival streak time)
      - `damage_dealt` / `damage_taken`
    - **Block Mining Stats (Shortcuts):**
-     - `diamonds` / `diamantes` (Diamond ore & deepslate diamond ore)
+     - `diamonds` (Diamond ore & deepslate diamond ore)
      - `debris` / `netherite` (Ancient debris)
-     - `iron` / `ferro` (Iron ore & deepslate iron ore)
-     - `gold` / `ouro` (Gold ore, deepslate gold ore & nether gold ore)
-     - `copper` / `cobre` (Copper ore & deepslate copper ore)
-     - `coal` / `carvao` (Coal ore & deepslate coal ore)
+     - `iron` (Iron ore & deepslate iron ore)
+     - `gold` (Gold ore, deepslate gold ore & nether gold ore)
+     - `copper` (Copper ore & deepslate copper ore)
+     - `coal` (Coal ore & deepslate coal ore)
      - `lapis` / `emerald` / `redstone`
-     - `stone` / `pedra` (Stone, cobble & deepslate)
-     - `obsidian` / `obsidiana`
-     - `wood` / `madeira` / `logs` (All log types)
+     - `stone` (Stone, cobble & deepslate)
+     - `obsidian`
+     - `wood` / `logs` (All log types)
      - `spawner` / `sculk` / `crying_obsidian`
    - **Any Vanilla Block (`mined:<block_id>`):**
      - You can track *any* Minecraft block by typing `mined:<block>` (e.g. `mined:glowstone`, `mined:amethyst_cluster`, `mined:beacon`, `mined:tnt`). The datapack creates the tracking objective dynamically!
@@ -254,24 +247,9 @@ Transform standard lecterns into real-time, interactive survival leaderboard pod
 
 ---
 
-### 8. 🌾 Villager Temptation ("O Trigo dos Aldeões")
+### 8. 🐾 Petting Companions ("Pet Love")
 
-Transport and guide villagers effortlessly across your world without complicated boats, minecarts, or leads — simulating the vanilla animal food temptation mechanic!
-
-#### 💎 How it Works:
-1. Hold an **Emerald Block** (`minecraft:emerald_block`) in your **mainhand** or **offhand**.
-2. Any adult villager within a **12-block radius** immediately notices the emerald block:
-   - Plays an excited villager sound and produces green emerald particles (`happy_villager`).
-   - Fixes their gaze on you and begins walking towards you smoothly.
-3. **Safe Distance:** When the villager reaches within **~2.2 blocks**, they stop walking and admire the block, preventing them from pushing or suffocating you.
-4. **Terrain Navigation:** The villager automatically steps up 1-block ledges, stairs, and slabs while following.
-5. **Releasing:** If you switch to another item or walk further than 12 blocks away, the villager loses interest (with a disappointed grunt sound) and instantly returns to their standard vanilla AI and schedule (work, rest, gossip).
-
----
-
-### 9. 🐾 Pet Love ("Carinho nos Pets")
-
-Give affection to your canine and feline companions in survival without opening menus or needing commands!
+Show affection to your canine and feline companions in survival without opening menus or needing commands!
 
 #### 💖 How it Works:
 1. Approach any **Wolf** or **Cat** with an **empty main hand** (`weapon.mainhand`).
@@ -280,110 +258,64 @@ Give affection to your canine and feline companions in survival without opening 
    - **Wolves:** Play the satisfied panting sound (`entity.wolf.pant`).
    - **Cats:** Play a cozy purring sound (`entity.cat.purr`).
    - Both display animated **Heart particles** (`minecraft:heart`) above their head!
-4. **Zero Impact on Survival:** Holding food, bones, or weapons will perform normal taming/breeding/sitting actions instead of triggering the petting sound.
+4. **Zero Impact on Survival:** Holding food, bones, or weapons will perform normal taming, breeding, or sitting interactions instead.
 
 ---
 
-### 10. 🪙 Coin Flip ("Cara ou Coroa")
+### 9. 🪙 Coin Flip
 
-Settle disputes, bet on trades, or make decisions with a fun coin toss using a gold nugget!
+Settle disputes, wager bets, or make decisions with a fun coin toss using a gold nugget!
 
 #### 💰 How it Works:
 1. Hold a **Gold Nugget** (`minecraft:gold_nugget`).
 2. **Crouch (Shift)** and drop the nugget (`Q` while sneaking).
 3. **The Toss:**
-   - A realistic spinning coin sound echoes (`block.chain.place` pitch 1.8).
-   - The gold nugget is automatically kept safe and returned to your inventory (never lost or duplicated).
-   - An announcement in gold/yellow text is broadcast to all players within 15 blocks:
-     `[Moeda] Player jogou uma moeda e deu CARA!` ou `COROA!`
+   - A spinning coin sound plays in the air (`block.chain.place` pitch 1.8).
+   - The gold nugget is safely returned directly to your inventory (never lost or duplicated).
+   - An announcement in gold and yellow text is broadcast to all players within 15 blocks:
+     `[Coin] Player flipped a coin and got HEADS!` or `TAILS!`
 
 ---
 
-### 11. 🧽 Cubo de Enxofre: Aspirador de Oceano ("Living Ocean Vacuum")
+### 10. 🧊 Sulfur Cube Utility & Archetypes
 
-Drene lagos, rios e monumentos oceânicos inteiros de forma dinâmica e divertida usando o novo mob **Cubo de Enxofre** (*Sulfur Cube*) introduzido no Minecraft 26.3! Chega de ter que secar dezenas de esponjas na fornalha ou matar incontáveis Elder Guardians.
+The **Sulfur Cube** (*Minecraft 26.3*) is an interactive companion mob that can ingest blocks and items dropped near it, gaining unique survival utilities and atmospheric effects based on what it eats.
 
-#### 🌊 Como Funciona:
-1. **Alimente o Cubo com uma Esponja:**
-   - Jogue uma **Esponja** (`minecraft:sponge`) ou **Esponja Molhada** (`minecraft:wet_sponge`) no chão na frente de um **Cubo de Enxofre**.
-   - O Cubo de Enxofre engolirá o bloco (visível em seu corpo).
-2. **Absorção e Saturação (Ficar Molhado):**
-   - Ao nadar na água, o Cubo de Enxofre com esponja seca **drena ativamente um raio de 5x5x5 a 7x3x7 de água**.
-   - Conforme absorve água (capacidade de ~250 blocos de água), a esponja em seu corpo se encharca e **transforma-se em uma Esponja Molhada** (`wet_sponge`)!
-   - Quando saturado ("molhado"), ele para de absorver água e começa a gotejar água (`dripping_water`).
-3. **Secagem com Cubo de Enxofre de Magma:**
-   - Para secar o Cubo de Enxofre encharcado, basta aproximá-lo (raio de 6 blocos) de um **Cubo de Enxofre de Magma** (um Cubo de Enxofre que engoliu um Bloco de Magma)!
-   - O calor intenso faz a água evaporar em uma nuvem de vapor (`cloud`, `smoke`) com som de chiado (`block.fire.extinguish`).
-   - A esponja em seu corpo **volta instantaneamente a ser uma Esponja Seca** (`sponge`)!
-   - **Dica Pro:** Se você mantiver o Cubo de Enxofre de Magma nadando ao lado do Cubo com Esponja, a secagem é contínua e instantânea!
-4. **Transporte e Resgate:**
-   - Cubos de Enxofre podem ser transportados num balde (`sulfur_cube_bucket`) ou conduzidos por Laço (*Lead*).
-   - Para recuperar os itens (esponja, esponja molhada ou magma), basta tosquiar (*Shears*) o Cubo!
+#### 🧲 How to Use:
+1. **Feeding:** Drop an item or block on the ground in front of a Sulfur Cube. The cube will ingest it and visibly display it inside its body.
+2. **Transporting:** Transport cubes using a water bucket (`sulfur_cube_bucket`) or lead them with a standard Lead.
+3. **Retrieving Items:** Right-click the cube with **Shears** at any time to safely retrieve the ingested item.
 
----
-
-### 12. 🌫️ Cubo de Enxofre: A Máquina de Névoa ("Mist Machine")
-
-Transforme o Cubo de Enxofre em um sutil emissor de névoa fria e geada utilizando **Gelo Compactado** (`minecraft:packed_ice`) ou **Gelo Azul** (`minecraft:blue_ice`)!
-
-#### ❄️ Como Funciona:
-1. **Alimentando o Cubo:**
-   - Jogue um bloco de Gelo Compactado ou Gelo Azul no chão para o Cubo de Enxofre engolir (arquétipo nativo `fast_sliding`).
-2. **Névoa Sutil & Geada:**
-   - Emite pequenas e suaves partículas de névoa e cristais de gelo (`cloud`, `snowflake`) com som discreto de neve a cada poucos segundos.
-   - Ideal para decoração de ambientes frios, adegas ou cemitérios de forma não intrusiva.
-3. **Passos de Geada Vivos (*Frost Walker*):**
-   - Ao deslizar sobre a água, ele congela a água diretamente abaixo dele em **Gelo Fosco** (`frosted_ice`), permitindo criar caminhos sobre a água.
-4. **Extintor Natural:**
-   - Apaga chamas e resfria lava superficial ao passar por cima.
+#### 📋 Cube Archetypes & Behaviors:
+- **🧽 Sponge / Wet Sponge (Living Ocean Vacuum):**
+  - Actively drains water in a 5x5x5 to 7x3x7 area around it while swimming.
+  - Can absorb up to ~250 water blocks before saturating into a Wet Sponge and dripping water.
+- **🔥 Magma Block (Thermal Vaporizer):**
+  - Emits dense steam clouds and boiling heat.
+  - Automatically dries adjacent Wet Sponge Cubes within a 6-block radius back into dry sponges instantly.
+- **❄️ Packed Ice / Blue Ice (Mist Machine & Frost Walker):**
+  - Freezes water directly beneath it into Frosted Ice as it glides.
+  - Extinguishes nearby fire and cools surface lava.
+  - Periodically emits subtle cold mist particles and snowflakes for atmospheric builds.
+- **🔮 Amethyst Block (Amethyst Resonance):**
+  - Emits delicate purple sparkles and plays a gentle, ambient chime every 3 seconds.
+- **🌿 Moss Block (Botanical Filter):**
+  - Releases delicate green spores, cherry blossom petals, and soft leaf-rustling sounds.
+- **🌵 Cactus (Trash Incinerator & Defense Spikes):**
+  - Instantly destroys and incinerates any dropped items that touch it (acts as a mobile trash bin).
+  - Deals authentic cactus prick damage to mobs and players upon contact.
 
 ---
 
-### 13. 🔮 Cubo de Enxofre: Ressonância & Botânica (Efeitos Sutis)
+### 11. 🔥 Thermal Sponge Drying
 
-Variantes ambientais delicadas e discretas para enriquecer a atmosfera da sua base:
+Dry wet sponges instantly in the Overworld without needing furnaces or traveling to the Nether! When exposed to the thermal heat of a **Magma Block** (`minecraft:magma_block`), moisture is vaporized on contact.
 
-#### 🔮 Ressonância de Ametista (`amethyst_block`):
-- O Cubo de Enxofre que engole um **Bloco de Ametista** emite tênues centelhas roxas cintilantes (`witch`, `portal`).
-- A cada 3 segundos, toca um sino suave e discreto de ametista (`block.amethyst_block.chime` em volume baixo).
-
-#### 🌿 Filtro Botânico (`moss_block`):
-- O Cubo de Enxofre que engole um **Bloco de Musgo** solta delicados esporos verdes e pétalas florais ocasionais (`spore_blossom_air`, `cherry_leaves`).
-- Emite um som muito suave de roçar de folhas (`block.azalea_leaves.step`).
-
----
-
-### 14. 🌵 Cubo de Enxofre: O Cubo Cacto ("Cactus Cube")
-
-Transforme o Cubo de Enxofre em um triturador móvel de lixo e espinho vivo utilizando um **Cacto** (`minecraft:cactus`)!
-
-#### 🌵 Como Funciona:
-1. **Alimentando o Cubo:**
-   - Jogue um **Cacto** (`minecraft:cactus`) no chão para o Cubo de Enxofre engolir.
-2. **Triturador / Incinerador de Itens:**
-   - Qualquer item dropado no chão que encostar no Cubo Cacto (raio de ~1 bloco) é **destruído e desintegrado instantaneamente** com som de quebra e partículas de espinhos de cacto (`block.cactus.destroy`).
-   - Perfeito como lixeira viva ou limpador de itens em excesso em minerações e fazendas!
-3. **Dano de Contato Espinhoso:**
-   - Jogadores, monstros e animais que encostarem no Cubo Cacto recebem **dano autêntico de cacto** (`minecraft:cactus`) com som de espetada e animação de dano.
-   - Ideal para criar armadilhas vivas móveis contra zumbis e invasores!
-
----
-
-### 15. 🔥 Secagem Térmica de Esponjas ("Thermal Sponge Drying")
-
-Seque esponjas molhadas instantaneamente no Overworld sem precisar usar fornalhas ou viajar até o Nether! Ao entrar em contato térmico com um **Bloco de Magma** (`minecraft:magma_block`), a água contida na esponja é vaporizada imediatamente.
-
-#### ♨️ Como Funciona:
-1. **Colocando a Esponja Molhada:**
-   - Ao posicionar uma **Esponja Molhada** (`minecraft:wet_sponge`) adjacente a qualquer face ou vértice de um **Bloco de Magma** (em cima, embaixo, aos lados ou diagonal), o calor extremo faz a esponja evaporar instantaneamente.
-   - O bloco se transforma de imediato em uma **Esponja Seca** (`minecraft:sponge`).
-2. **Colocando o Bloco de Magma:**
-   - Se você posicionar um **Bloco de Magma** ao lado de esponjas molhadas já colocadas, todas as esponjas molhadas ao redor no raio de contato secam simultaneamente!
-3. **Efeitos Visuais e Sonoros Imersivos:**
-   - Uma densa nuvem de vapor (`cloud`), fumaça preta (`smoke`), pequenas chamas (`flame`) e estalos de água fervente (`bubble_pop`) irrompem no momento da secagem.
-   - Um clássico som nítido de chiado térmico (`block.fire.extinguish` e `block.lava.extinguish`) ecoa no ambiente.
-4. **Estações de Secagem Rápida:**
-   - Crie pisos ou bancadas de blocos de magma para secar dezenas de esponjas em segundos apenas colocando e quebrando-as, acelerando imensamente a drenagem de oceanos e templos!
+#### ♨️ How it Works:
+1. **Placing a Wet Sponge:** Placing a **Wet Sponge** (`minecraft:wet_sponge`) adjacent to any face or edge of a **Magma Block** instantly vaporizes the water, reverting it into a dry **Sponge** (`minecraft:sponge`).
+2. **Placing a Magma Block:** Placing a **Magma Block** adjacent to already-placed wet sponges instantly dries all connected wet sponges within contact radius simultaneously.
+3. **Visual & Audio Feedback:** Produces dense steam puffs (`cloud`), black smoke, steam hiss sounds (`block.fire.extinguish`), and crackling effects.
+4. **Fast Drying Stations:** Build magma block countertops or floor grids to dry dozens of sponges in seconds simply by placing and breaking them!
 
 ---
 
@@ -406,7 +338,7 @@ Seque esponjas molhadas instantaneamente no Overworld sem precisar usar fornalha
 <details>
 <summary><b>Q: Why didn't my player head skin load immediately?</b></summary>
 <p>
-Minecraft resolves custom player skull skins by contacting Mojang's session servers. Ensure your server/client has an active internet connection. If testing in offline/cracked mode, custom player skins will default to Steve/Alex unless using custom texture base64 presets like <code>Giant Honey Dipper</code>.
+Minecraft resolves custom player skull skins by contacting Mojang's session servers. Ensure your server/client has an active internet connection. If testing in offline/cracked mode, custom player skins will default to Steve/Alex unless using custom texture base64 presets.
 </p>
 </details>
 
@@ -431,22 +363,27 @@ VanillaEnriched/
     ├── minecraft/                      # Vanilla tags (load and tick hooks)
     │   └── tags/function/              # Load and Tick hooks
     └── main/
-        ├── advancement/                # Event triggers (lectern, frames, banners)
+        ├── advancement/                # Event triggers
+        │   ├── items/                  # Item-based advancements
+        │   └── mobs/                   # Mob-based advancements
         ├── recipe/                     # Crafting recipes (heads, invisible frames)
         └── function/
             ├── backend/math/           # Sqrt and distance algorithms
             ├── backend/sort/           # Ranking algorithms
-            ├── item/clock/             # Clock HUD & wall clock displays
-            ├── item/compass/           # Compass HUD & 8-way cardinal facing
-            ├── item/stat_book/         # Multipage lectern leaderboard system
-            ├── mechanic/colored_names/ # Anvil color & chroma interpreter
-            ├── mechanic/custom_head/   # Decorative player head transformation
-            ├── mechanic/invisible_frame# Dynamic invisible frame logic
-            ├── mechanic/region/        # Territory discovery system
-            ├── mechanic/rp/            # Roleplay mechanics (petting, coin flip)
-            ├── mechanic/sulfur_sponge/ # Sulfur Cube Ocean Vacuum (drain, dry, soak, tick)
-            ├── mechanic/sulfur_variants# Sulfur Cube Variants (mist machine, amethyst, moss)
-            ├── mechanic/villager_follow# Villager emerald block temptation system
+            ├── items/                  # Item mechanics & utilities
+            │   ├── banner/             # Territory discovery banner system
+            │   ├── clock/              # Clock HUD & holographic wall clocks
+            │   ├── coin/               # Gold nugget coin flip
+            │   ├── colored_names/      # Anvil color & chroma interpreter
+            │   ├── compass/            # Compass HUD & 8-way cardinal facing
+            │   ├── custom_head/        # Decorative player head sculpting
+            │   ├── invisible_frame/    # Dynamic invisible frame logic
+            │   ├── sponge_dry/         # Sponge thermal drying system
+            │   └── stat_book/          # Multipage lectern leaderboard system
+            ├── mobs/                   # Mob mechanics & companions
+            │   ├── pet/                # Companion petting interaction
+            │   └── sulfur_cube/        # Sulfur Cube utilities & archetypes
+            ├── player/                 # Player interaction routines (sneak)
             └── setup/                  # Global init (load) and main tick loop (tick)
 ```
 

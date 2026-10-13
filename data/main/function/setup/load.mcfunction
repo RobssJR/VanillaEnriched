@@ -29,25 +29,19 @@ execute in minecraft:overworld run item replace block 0 319 0 container.1 with m
 
 # Region System Initialization (Scoreboards & Scheduled Loops)
 scoreboard objectives add vp_player_id dummy
-schedule function main:mechanic/region/tracker_loop 20t replace
-schedule function main:mechanic/region/clean_loop 100t replace
+schedule function main:items/banner/tracker_loop 20t replace
+schedule function main:items/banner/clean_loop 100t replace
 
 # Statistic Books Initialization
-function main:item/stat_book/load
+function main:items/stat_book/load
 
 # Custom Head Recipes
 recipe take @a minecraft:player_head
 recipe give @a main:decorative_player_head
 
-# Villager Follow Guide System Initialization
-team add main.guide
-team modify main.guide collisionRule never
-execute as @e[type=wandering_trader,tag=main.guide] run kill @s
-tag @e[type=villager,tag=main.tempted] remove main.tempted
-
 # Sponge Thermal Drying Initialization
-advancement revoke @a only main:mechanic/sponge_dry/place_wet_sponge
-advancement revoke @a only main:mechanic/sponge_dry/place_magma_block
+advancement revoke @a only main:items/sponge_dry/place_wet_sponge
+advancement revoke @a only main:items/sponge_dry/place_magma_block
 
 # Notify players of successful load
 tellraw @a {"text":"[Vanilla Enriched] Systems Successfully Loaded!","color":"green"}

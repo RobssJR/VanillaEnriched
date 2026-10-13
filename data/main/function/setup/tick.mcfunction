@@ -5,7 +5,7 @@ execute store result score .doDaylight vplus_state run gamerule advance_time
 execute if entity @a if score .doDaylight vplus_state matches 0 run time add 1
 
 # 2. Global Time Calculation (Moved from clock)
-function main:item/clock/time_calc
+function main:items/clock/time_calc
 
 # 3. Wall Clocks Update
 # 1-Second Global Timer (20 ticks) used across periodic 1s systems
@@ -13,49 +13,43 @@ scoreboard players add .tick_20t vplus_math 1
 execute if score .tick_20t vplus_math matches 20.. run scoreboard players set .tick_20t vplus_math 0
 
 # Scan for new wall clocks every 20 ticks (1 second)
-execute if score .tick_20t vplus_math matches 0 run function main:item/clock/wallclock_scan
+execute if score .tick_20t vplus_math matches 0 run function main:items/clock/wallclock_scan
 
 # Update wall clocks text when minute changes
-execute unless score .minute vplus_math = .last_minute vplus_math run function main:item/clock/wallclock_update
+execute unless score .minute vplus_math = .last_minute vplus_math run function main:items/clock/wallclock_update
 scoreboard players operation .last_minute vplus_math = .minute vplus_math
 
 # 4. Player Interactions (Sneaking)
-execute as @a[scores={vplus_sneak=1..}] run function main:mechanic/player/sneak
+execute as @a[scores={vplus_sneak=1..}] run function main:player/sneak
 
 # 5. Colored Names (Anvil Color System - Throttled every 4 ticks for performance)
 scoreboard players add .color_timer vplus_math 1
 execute if score .color_timer vplus_math matches 4.. run scoreboard players set .color_timer vplus_math 0
-execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.mainhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_main
-execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.offhand *[minecraft:custom_name] run function main:mechanic/colored_names/check_hand_off
-execute as @e[type=item,tag=!color_checked] run function main:mechanic/colored_names/check_item
+execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.mainhand *[minecraft:custom_name] run function main:items/colored_names/check_hand_main
+execute if score .color_timer vplus_math matches 0 as @a if items entity @s weapon.offhand *[minecraft:custom_name] run function main:items/colored_names/check_hand_off
+execute as @e[type=item,tag=!color_checked] run function main:items/colored_names/check_item
 
 # 6. Auto-Compass Lore
-execute as @a run function main:item/compass/check_compass_lore
+execute as @a run function main:items/compass/check_compass_lore
 
 # 7. Statistic Books & Lecterns (Periodic maintenance - Every 20 ticks / 1 second)
-execute if score .tick_20t vplus_math matches 0 run function main:item/stat_book/tick
+execute if score .tick_20t vplus_math matches 0 run function main:items/stat_book/tick
 
 # 8. Instant Lectern Entity Cleanup (Runs every single tick)
 execute as @e[tag=enriched.lectern] at @s align xyz unless block ~ ~ ~ minecraft:lectern run kill @s
 execute as @e[tag=enriched.name_fetch] run kill @s
 
 # 9. Invisible Item Frames
-function main:mechanic/invisible_frame/tick
+function main:items/invisible_frame/tick
 
 # 10. Custom Decorative Player Heads (Throttled every 4 ticks)
-execute if score .color_timer vplus_math matches 0 as @a run function main:mechanic/custom_head/check_player
-execute if score .color_timer vplus_math matches 0 as @e[type=item] if items entity @s contents player_head[!custom_data~{head_applied:1b}] run function main:mechanic/custom_head/check_dropped
-# 11. Villager Follow ("O Trigo dos Aldeões" - Emerald Block Temptation)
-function main:mechanic/villager_follow/tick
+execute if score .color_timer vplus_math matches 0 as @a run function main:items/custom_head/check_player
+execute if score .color_timer vplus_math matches 0 as @e[type=item] if items entity @s contents player_head[!custom_data~{head_applied:1b}] run function main:items/custom_head/check_dropped
+# 11. Roleplay: Coin Flip ("Cara ou Coroa")
+function main:items/coin/coin_tick
 
-# 12. Roleplay: Coin Flip ("Cara ou Coroa")
-function main:mechanic/rp/coin_tick
-
-# 13. Sulfur Cube Ocean Vacuum ("Cubo de Enxofre: Aspirador de Oceano")
-function main:mechanic/sulfur_sponge/tick
-
-# 14. Sulfur Cube Variants (Máquina de Névoa, Ressonância de Ametista e Filtro Botânico)
-function main:mechanic/sulfur_variants/tick
+# 12. Sulfur Cube Mob (Ocean Vacuum & Elemental Variants)
+function main:mobs/sulfur_cube/tick
 
 # Reset roleplay sneak score for all players at the end of the tick loop
 scoreboard players set @a vp_sneak 0
