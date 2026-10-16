@@ -32,24 +32,21 @@ execute as @e[type=item,tag=!color_checked] run function main:items/colored_name
 # 6. Auto-Compass Lore
 execute as @a run function main:items/compass/check_compass_lore
 
-# 7. Statistic Books & Lecterns (Periodic maintenance - Every 20 ticks / 1 second)
-execute if score .tick_20t vplus_math matches 0 run function main:items/stat_book/tick
-
-# 8. Instant Lectern Entity Cleanup (Runs every single tick)
-execute as @e[tag=enriched.lectern] at @s align xyz unless block ~ ~ ~ minecraft:lectern run kill @s
-execute as @e[tag=enriched.name_fetch] run kill @s
-
-# 9. Invisible Item Frames
+# 7. Invisible Item Frames
 function main:items/invisible_frame/tick
 
-# 10. Custom Decorative Player Heads (Throttled every 4 ticks)
+# 8. Custom Decorative Player Heads (Throttled every 4 ticks)
 execute if score .color_timer vplus_math matches 0 as @a run function main:items/custom_head/check_player
 execute if score .color_timer vplus_math matches 0 as @e[type=item] if items entity @s contents player_head[!custom_data~{head_applied:1b}] run function main:items/custom_head/check_dropped
-# 11. Roleplay: Coin Flip ("Cara ou Coroa")
+
+# 9. Roleplay: Coin Flip ("Cara ou Coroa")
 function main:items/coin/coin_tick
 
-# 12. Sulfur Cube Mob (Ocean Vacuum & Elemental Variants)
+# 10. Sulfur Cube Mob (Ocean Vacuum & Elemental Variants)
 function main:mobs/sulfur_cube/tick
+
+# 11. Tool Statistics Lore Tracking (Renamed items Stat-Trak)
+function main:items/stats/tick
 
 # Reset roleplay sneak score for all players at the end of the tick loop
 scoreboard players set @a vp_sneak 0

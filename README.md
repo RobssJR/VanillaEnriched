@@ -6,7 +6,7 @@
 ![Dependencies](https://img.shields.io/badge/Dependencies-None%20(Pure%20Vanilla)-orange)
 ![Pure Survival](https://img.shields.io/badge/Commands%20Required-0%20(Pure%20Survival)-success)
 
-**Vanilla Enriched** is a modular, high-performance survival enhancement datapack. It brings modern Quality of Life (QoL) features, immersive navigation HUDs, customizable decorative player heads, dynamic invisible item frames, holographic wall clocks, territory discovery titles, utility companions, and automated lectern leaderboards to your world — **100% vanilla, pure survival, with zero commands or mods required!**
+**Vanilla Enriched** is a modular, high-performance survival enhancement datapack. It brings modern Quality of Life (QoL) features, immersive navigation HUDs, customizable decorative player heads, dynamic invisible item frames, holographic wall clocks, territory discovery titles, utility companions, and equipment stat-trak tracking to your world — **100% vanilla, pure survival, with zero commands or mods required!**
 
 ---
 
@@ -20,11 +20,11 @@
   - [4. 🧭 Compass HUD & Lodestone Waypoints](#4--compass-hud--lodestone-waypoints)
   - [5. 🎨 Anvil Colors & Chroma Text Formatting](#5--anvil-colors--chroma-text-formatting)
   - [6. 🚩 Banner Territories & Area Discovery](#6--banner-territories--area-discovery)
-  - [7. 📚 Multipage Statistics Books & Lecterns](#7--multipage-statistics-books--lecterns)
-  - [8. 🐾 Petting Companions ("Pet Love")](#8--petting-companions-pet-love)
-  - [9. 🪙 Coin Flip](#9--coin-flip)
-  - [10. 🧊 Sulfur Cube Utility & Archetypes](#10--sulfur-cube-utility--archetypes)
-  - [11. 🔥 Thermal Sponge Drying](#11--thermal-sponge-drying)
+  - [7. 🐾 Petting Companions ("Pet Love")](#7--petting-companions-pet-love)
+  - [8. 🪙 Coin Flip](#8--coin-flip)
+  - [9. 🧊 Sulfur Cube Utility & Archetypes](#9--sulfur-cube-utility--archetypes)
+  - [10. 🔥 Thermal Sponge Drying](#10--thermal-sponge-drying)
+  - [11. ⚔️ Unique Renamed Tools & Weapons (Stat-Trak Lore)](#11-️-unique-renamed-tools--weapons-stat-trak-lore)
 - [❓ Frequently Asked Questions (FAQ) & Troubleshooting](#-frequently-asked-questions-faq--troubleshooting)
 - [🛠️ Architecture & File Structure](#️-architecture--file-structure)
 - [📄 License](#-license)
@@ -210,44 +210,7 @@ Create clean territory boundaries for your bases, villages, farms, and shops wit
 
 ---
 
-### 7. 📚 Multipage Statistics Books & Lecterns
-
-Transform standard lecterns into real-time, interactive survival leaderboard podiums — **100% automated with zero player commands needed!**
-
-#### 📖 How to Setup a Leaderboard:
-1. Craft a **Book and Quill**.
-2. On each page, write the identifier or shortcut of the statistic you want to track on that page:
-   - **General Stats:**
-     - `jump` (Total jumps)
-     - `deaths` (Total deaths)
-     - `kills` (Mob kills)
-     - `player_kills` (PvP kills)
-     - `walk` (Distance walked)
-     - `fly` (Elytra / flight distance)
-     - `play_time` (Total play time)
-     - `time_since_death` (Survival streak time)
-     - `damage_dealt` / `damage_taken`
-   - **Block Mining Stats (Shortcuts):**
-     - `diamonds` (Diamond ore & deepslate diamond ore)
-     - `debris` / `netherite` (Ancient debris)
-     - `iron` (Iron ore & deepslate iron ore)
-     - `gold` (Gold ore, deepslate gold ore & nether gold ore)
-     - `copper` (Copper ore & deepslate copper ore)
-     - `coal` (Coal ore & deepslate coal ore)
-     - `lapis` / `emerald` / `redstone`
-     - `stone` (Stone, cobble & deepslate)
-     - `obsidian`
-     - `wood` / `logs` (All log types)
-     - `spawner` / `sculk` / `crying_obsidian`
-   - **Any Vanilla Block (`mined:<block_id>`):**
-     - You can track *any* Minecraft block by typing `mined:<block>` (e.g. `mined:glowstone`, `mined:amethyst_cluster`, `mined:beacon`, `mined:tnt`). The datapack creates the tracking objective dynamically!
-3. Sign the book with the title: **`EnrichedStats`** (or **`MCStats`**).
-4. Place the signed book onto any **Lectern**.
-5. The datapack automatically formats the book with neat centered headers (`✦ Diamonds Mined ✦`), descending sorted rankings, and actual player usernames! All players on the world/server are tracked automatically.
-
----
-
-### 8. 🐾 Petting Companions ("Pet Love")
+### 7. 🐾 Petting Companions ("Pet Love")
 
 Show affection to your canine and feline companions in survival without opening menus or needing commands!
 
@@ -262,7 +225,7 @@ Show affection to your canine and feline companions in survival without opening 
 
 ---
 
-### 9. 🪙 Coin Flip
+### 8. 🪙 Coin Flip
 
 Settle disputes, wager bets, or make decisions with a fun coin toss using a gold nugget!
 
@@ -277,7 +240,7 @@ Settle disputes, wager bets, or make decisions with a fun coin toss using a gold
 
 ---
 
-### 10. 🧊 Sulfur Cube Utility & Archetypes
+### 9. 🧊 Sulfur Cube Utility & Archetypes
 
 The **Sulfur Cube** (*Minecraft 26.3*) is an interactive companion mob that can ingest blocks and items dropped near it, gaining unique survival utilities and atmospheric effects based on what it eats.
 
@@ -307,7 +270,7 @@ The **Sulfur Cube** (*Minecraft 26.3*) is an interactive companion mob that can 
 
 ---
 
-### 11. 🔥 Thermal Sponge Drying
+### 10. 🔥 Thermal Sponge Drying
 
 Dry wet sponges instantly in the Overworld without needing furnaces or traveling to the Nether! When exposed to the thermal heat of a **Magma Block** (`minecraft:magma_block`), moisture is vaporized on contact.
 
@@ -316,6 +279,38 @@ Dry wet sponges instantly in the Overworld without needing furnaces or traveling
 2. **Placing a Magma Block:** Placing a **Magma Block** adjacent to already-placed wet sponges instantly dries all connected wet sponges within contact radius simultaneously.
 3. **Visual & Audio Feedback:** Produces dense steam puffs (`cloud`), black smoke, steam hiss sounds (`block.fire.extinguish`), and crackling effects.
 4. **Fast Drying Stations:** Build magma block countertops or floor grids to dry dozens of sponges in seconds simply by placing and breaking them!
+
+---
+
+### 11. ⚔️ Unique Renamed Tools & Weapons (Stat-Trak Lore)
+
+Transform ordinary equipment into legendary artifacts that record your survival journey. When a tool or weapon is **renamed on an Anvil**, it awakens and begins tracking your deeds directly in its lore!
+
+#### 🛠️ How it Works:
+1. **The Baptism (Anvil):** Take any tool or weapon to an Anvil and give it a custom name (e.g. *"Earthshaker"*, *"Nightfall"*, or with anvil colors like `"&6Excalibur"`).
+2. **Awakening:** The first time you hold the renamed item in your main hand, a crisp smithing chime plays (`block.smithing_table.use`) with copper particles (`wax_off`), initializing its statistics lore with `0`.
+3. **Stat-Trak Lore Formatting (All Supported Tools):**
+   - **Mining Tools (Pickaxes, Shovels, Hoes):** Tracks total blocks broken.
+     > `✦ Blocks Broken: 1420` *(Gold & Yellow)*
+   - **Weapons (Swords, Mace, Trident, Bow, Crossbow):** Tracks total mobs & players slain.
+     > `✦ Enemies Slain: 254` *(Red & Gold)*
+   - **Axes (Dual Tool & Weapon):** Tracks **both** blocks harvested and enemies defeated simultaneously!
+     > `✦ Blocks Broken: 850`  
+     > `✦ Enemies Slain: 42`
+   - **Shears:** Tracks times sheared (sheep, mooshrooms, bee nests, pumpkins, vines).
+     > `✦ Times Sheared: 89` *(Light Purple & Yellow)*
+   - **Flint and Steel:** Tracks fires ignited on blocks or creatures.
+     > `✦ Fires Lit: 115` *(Gold & Red)*
+   - **Brush:** Tracks archaeology blocks brushed (suspicious sand / gravel).
+     > `✦ Blocks Brushed: 34` *(Yellow & Gold)*
+   - **Fishing Rod:** Tracks items and fish reeled in from bodies of water.
+     > `✦ Fish Caught: 67` *(Aqua & Yellow)*
+   - **Compass (Lifetime Odometer):** Displays the player's lifetime distance traveled across the entire world (`m` or `km`), dynamically updating as you move.
+     > `✦ Distance Traveled: 840 m` or `12.4 km` *(Aqua & Yellow)*
+   - **Clock (Lifetime Stopwatch):** Displays the player's total lifetime playtime in the world (`m`, `h m` or `d h m`), smoothly updating every minute while held.
+     > `✦ Time Played: 45m`, `3h 20m` or `8d 12h 12m` *(Gold & Yellow)*
+4. **Permanent & Portable:** Statistics are stored inside the item's individual `minecraft:custom_data` component. If you store the tool in a chest, trade it, or lend it to a friend, its lifetime record remains etched forever into the item.
+5. **Smooth Action Protection:** Includes a smart debounce algorithm while continuously mining or moving so your hand never bobs or resets during rapid mining, and clocks update on quiet intervals without animation interruptions.
 
 ---
 
@@ -379,7 +374,7 @@ VanillaEnriched/
             │   ├── custom_head/        # Decorative player head sculpting
             │   ├── invisible_frame/    # Dynamic invisible frame logic
             │   ├── sponge_dry/         # Sponge thermal drying system
-            │   └── stat_book/          # Multipage lectern leaderboard system
+            │   └── stats/              # Renamed tool & weapon stat-trak tracking system
             ├── mobs/                   # Mob mechanics & companions
             │   ├── pet/                # Companion petting interaction
             │   └── sulfur_cube/        # Sulfur Cube utilities & archetypes

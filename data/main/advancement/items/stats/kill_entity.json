@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "killed_entity": {
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "rewards": {
+    "function": "main:items/stats/on_kill"
+  }
+}
